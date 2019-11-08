@@ -17,7 +17,6 @@ const StyledSocialLinks = styled.div`
 `
 
 const SocialLinks = props => {
-  console.log(props)
   return (
     <StyledSocialLinks {...props}>
       <SocialIcon url="https://twitter.com/kervin5" />
