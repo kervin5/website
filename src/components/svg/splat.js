@@ -7,10 +7,7 @@ const StyledDiv = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
-  left: ${props => {
-    console.log(props.position)
-    return props.position === "right" ? "40vw" : "-10vw"
-  }};
+  left: ${props => (props.position === "right" ? "40vw" : "-10vw")};
   /* overflow: hidden; */
 
   svg {

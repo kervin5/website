@@ -35,6 +35,7 @@ const IndexPage = () => (
         <Row middle="xs">
           <Col xs={12} md={6}>
             <Padding>
+              <HTag>About Me</HTag>
               <p>
                 I'm a web developer based in Los Angeles, passionate for
                 creating robust yet user friendly solutions. Writing{" "}
@@ -61,16 +62,18 @@ const IndexPage = () => (
         <Row middle="xs">
           <Col xs={12} md={6}>
             <Padding>
+              <HTag>Services</HTag>
               <p>
-                If you're a business owner looking to get started on a project
-                with a freelance web developer, a developer looking to
+                Whether you're a business owner looking to get started on a
+                project with a freelance web developer, a developer looking to
                 collaborate on something cool, or just want to say hi, shoot me
                 a message and let's work together.
               </p>
 
               <p>
                 I specialize in the development of static sites, UI/UX
-                development, Wordpress development & MERN applications.
+                development, Javascript web applications and Wordpress
+                development.
               </p>
             </Padding>
           </Col>
