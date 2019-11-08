@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import ReactGA from "react-ga"
@@ -15,17 +15,17 @@ import Header from "../header"
 import Footer from "./Footer"
 import "./layout.css"
 
-if (window) {
-  ReactGA.initialize("UA-147253394-1")
-  ReactGA.pageview(window.location.pathname + window.location.search)
-}
-
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
   require("smooth-scroll")('a[href*="#"]')
 }
 
 const Layout = ({ children }) => {
+  useEffect(() => {
+    ReactGA.initialize("UA-147253394-1")
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
