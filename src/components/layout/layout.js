@@ -8,11 +8,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import ReactGA from "react-ga"
 
 import Theme from "./Theme"
 import Header from "../header"
 import Footer from "./Footer"
 import "./layout.css"
+
+ReactGA.initialize("UA-147253394-1")
+ReactGA.pageview(window.location.pathname + window.location.search)
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require

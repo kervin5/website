@@ -10,10 +10,10 @@ const StyledMenu = styled.div``
 
 const StyledMenuOptions = styled.div`
   position: fixed;
-  top: 0;
-  left: ${props => (props.open ? "0" : "120vw")};
-  bottom: 0;
-  right: ${props => (props.open ? "0" : "-120vw")};
+  top: ${props => (props.open ? "0" : "-100vh")};
+  left: 0;
+  bottom: ${props => (props.open ? "0" : "100vh")};
+  right: 0;
 
   .SplatSVG {
     transform: ${props => (props.open ? "scale(3)" : "scale(0)")};
