@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
+import Theme from "./layout/Theme"
 import Header from "./header"
 import "./layout.css"
 
@@ -24,13 +25,13 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <Theme>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
+          width: `100%`,
+          padding: 0,
           paddingTop: 0,
         }}
       >
@@ -41,7 +42,7 @@ const Layout = ({ children }) => {
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
-    </>
+    </Theme>
   )
 }
 
