@@ -14,8 +14,6 @@ import PersonIllustration from "../components/svg/person"
 import Envelope from "../components/svg/envelope"
 import SocialLinks from "../components/navigation/SocialLinks"
 
-import Typewriter from "../components/ui/Typewriter"
-
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
@@ -26,11 +24,10 @@ const IndexPage = () => (
             <Logo />
           </Col>
           <Col xs={12} md={6}>
-            <Typewriter>
-              <HTag nomargin>
-                Kervin <Highlight>Vasquez</Highlight>
-              </HTag>
-            </Typewriter>
+            <HTag nomargin>
+              Kervin <Highlight>Vasquez</Highlight>
+            </HTag>
+
             <HTag as="h2" weight="300">
               Full-Stack Developer
               <SocialLinks />
