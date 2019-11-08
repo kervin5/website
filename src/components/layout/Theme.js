@@ -3,10 +3,10 @@ import { ThemeProvider } from "styled-components"
 
 export const theme = {
   mainColor: "#ffcc00",
-  secondaryColor: "#ff546c",
+  secondaryColor: "#F44B5F",
   darkColor: "black",
   lightColor: "white",
-  containerWidth: "960px",
+  containerWidth: "1130px",
 }
 
 const Theme = props => {

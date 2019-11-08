@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Kervin Vasquez - Web Developer`,
+    description: `I'm a web developer based in Los Angeles, passionate for creating robust yet user friendly solutions. Writing reusable, scalable, testable, and efficient software with Javascript and PHP is what I do best 😁.`,
+    author: `@kervin5`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,

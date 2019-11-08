@@ -18,9 +18,13 @@ const StyledPageSection = styled.div`
   }
 `
 
-const PageSection = ({ splat, color, children }) => {
+const PageSection = ({ splat, color, children, id }) => {
   return (
-    <StyledPageSection className={`PageSection`} color={color}>
+    <StyledPageSection
+      className={`PageSection`}
+      color={color}
+      {...(id ? { id } : {})}
+    >
       {splat && (
         <Splat position={typeof splat === "string" ? splat : "right"} />
       )}

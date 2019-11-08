@@ -1,8 +1,9 @@
 import React from "react"
-import { theme } from "./layout/Theme"
+import { theme } from "../layout/Theme"
 
-const HTag = ({ as, children, weight, margin, nomargin, color }) => {
+const HTag = ({ as, children, weight, margin, nomargin, color, id }) => {
   const TagToRender = as
+  const otherProps = id ? { id } : {}
 
   return (
     <TagToRender
@@ -11,6 +12,7 @@ const HTag = ({ as, children, weight, margin, nomargin, color }) => {
         color: theme[color],
         marginBottom: nomargin ? "0" : margin,
       }}
+      {...otherProps}
     >
       {children}
     </TagToRender>
