@@ -8,22 +8,50 @@ import HTag from "../components/htag"
 import SEO from "../components/seo"
 
 import PageSection from "../components/layout/PageSection"
+import Padding from "../components/layout/Padding"
 import Logo from "../components/svg/logo"
+import PersonIllustration from "../components/svg/person"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <PageSection splat>
       <Grid>
-        <Row middle="xs">
-          <Col xs={6} md={6}>
+        <Row middle="xs" center="xs">
+          <Col xs={12} md={6}>
+            <Logo />
+          </Col>
+          <Col xs={12} md={6}>
             <HTag nomargin>Kervin Vasquez</HTag>
             <HTag as="h2" weight="300">
               Full-Stack Developer
             </HTag>
           </Col>
-          <Col xs={6} md={6}>
-            <Logo />
+        </Row>
+      </Grid>
+    </PageSection>
+    <PageSection splat="left">
+      <Grid>
+        <Row middle="xs">
+          <Col xs={12} md={6}>
+            <Padding>
+              <p>
+                I'm a web developer based in Los Angeles, passionate for
+                creating robust yet user friendly solutions. Writing{" "}
+                <strong>reusable, scalable, testable, and efficient</strong>{" "}
+                software with <strong>Javascript and PHP</strong> is what I do
+                best 😁.
+              </p>
+              <p>
+                I love movies, technology, good music, memes and basically
+                everything that makes the internet tick. I'm currently working
+                as a full-time web developer 💻 but I also have fun managing
+                ongoing freelance projects.{" "}
+              </p>
+            </Padding>
+          </Col>
+          <Col xs={12} md={6}>
+            <PersonIllustration />
           </Col>
         </Row>
       </Grid>
@@ -31,35 +59,28 @@ const IndexPage = () => (
     <PageSection splat>
       <Grid>
         <Row middle="xs">
-          <Col xs={6} md={6}>
-            <p>
-              I'm a web developer based in Los Angeles passionate for creating
-              robust yet user friendly solutions. Writing{" "}
-              <strong>reusable, scalable, testable, and efficient</strong>{" "}
-              software with <strong>Javascript and PHP</strong> is what I do
-              best.
-            </p>
-            <p>
-              Hi! 😁 my name is Kervin and I’m a full-stack web developer based
-              in Los Angeles. I'm passionate about movies, technology and
-              basically everything that makes the internet tick.{" "}
-            </p>
-            <p>
-              I currently work as a full-time web developer 💻 at a fast-growing
-              staffing agency as well as managing ongoing freelance side
-              projects. I find this combination to be super resourceful in terms
-              of my self-improvement process as a web developer, as well as for
-              keeping up with the rapid expansion of developer tools, libraries,
-              frameworks (😨Javascript), etc.{" "}
-            </p>
+          <Col xs={12} md={6}>
+            <Padding>
+              <p>
+                If you're a business owner looking to get started on a project
+                with a freelance web developer, a developer looking to
+                collaborate on something cool, or just want to say hi, shoot me
+                a message and let's work together.
+              </p>
+
+              <p>
+                I specialize in the development of static sites, UI/UX
+                development, Wordpress development & MERN applications.
+              </p>
+            </Padding>
           </Col>
-          <Col xs={6} md={6}>
+          <Col xs={12} md={6}>
             <DevicesImages />
           </Col>
         </Row>
       </Grid>
     </PageSection>
-    <Link to="/page-2/">Go to page 2</Link>
+    {/* <Link to="/page-2/">Go to page 2</Link> */}
   </Layout>
 )
 

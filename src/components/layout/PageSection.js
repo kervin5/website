@@ -18,11 +18,13 @@ const StyledPageSection = styled.div`
   }
 `
 
-const PageSection = props => {
+const PageSection = ({ splat, color, children }) => {
   return (
-    <StyledPageSection className={`PageSection`} color={props.color}>
-      {props.splat && <Splat />}
-      <div className="Content">{props.children}</div>
+    <StyledPageSection className={`PageSection`} color={color}>
+      {splat && (
+        <Splat position={typeof splat === "string" ? splat : "right"} />
+      )}
+      <div className="Content">{children}</div>
     </StyledPageSection>
   )
 }

@@ -7,8 +7,11 @@ const StyledDiv = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 40vw;
-  overflow: hidden;
+  left: ${props => {
+    console.log(props.position)
+    return props.position === "right" ? "40vw" : "-10vw"
+  }};
+  /* overflow: hidden; */
 
   svg {
     height: 100%;
@@ -20,9 +23,9 @@ const StyledDiv = styled.div`
   }
 `
 
-const SVG = () => {
+const SVG = ({ position = "right" }) => {
   return (
-    <StyledDiv>
+    <StyledDiv position={position}>
       <SplatSVG />
     </StyledDiv>
   )
