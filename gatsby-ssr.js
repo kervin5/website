@@ -13,7 +13,11 @@ exports.onRenderBody = ({
     <script
       dangerouslySetInnerHTML={{
         __html: `
-        window.sntchChat.Init(78783)
+
+        if(window) {
+            window.sntchChat.Init(78783)
+        }
+        
    	 `,
       }}
     />,

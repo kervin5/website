@@ -15,8 +15,10 @@ import Header from "../header"
 import Footer from "./Footer"
 import "./layout.css"
 
-ReactGA.initialize("UA-147253394-1")
-ReactGA.pageview(window.location.pathname + window.location.search)
+if (window) {
+  ReactGA.initialize("UA-147253394-1")
+  ReactGA.pageview(window.location.pathname + window.location.search)
+}
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
