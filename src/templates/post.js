@@ -6,6 +6,7 @@ import Container from "../components/layout/Container"
 import Layout from "../components/layout/layout"
 import Hero from "../components/layout/Hero"
 import SEO from "../components/seo"
+import Padding from "../components/layout/Padding"
 
 const StyledArticle = styled.article`
   padding-top: 100px;
@@ -76,8 +77,11 @@ const Post = ({ data }) => {
           {post.feature_image ? (
             <Hero src={post.feature_image} alt={post.title} />
           ) : null}
-          <h1>{post.title}</h1>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <Padding>
+            <h1>{post.title}</h1>
+
+            <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          </Padding>
         </StyledArticle>
       </Container>
     </Layout>
