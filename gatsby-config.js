@@ -47,8 +47,15 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-source-ghost`,
+      options: {
+        apiUrl: `https://kervin-tech-cms.herokuapp.com`,
+        contentApiKey: `89ec0ba82ec748c62ba8d33abe`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }

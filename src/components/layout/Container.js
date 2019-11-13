@@ -4,12 +4,12 @@ import styled from "styled-components"
 const StyledContainer = styled.div`
   margin: 0 auto;
   width: 100%;
-  max-width: ${props => props.maxWidth || props.theme.containerWidth};
+  max-width: ${props => props.maxwidth || props.theme.containerWidth};
 `
 
 const Container = props => {
   return (
-    <StyledContainer maxWidth={props.maxWidth}>
+    <StyledContainer maxwidth={props.maxwidth}>
       {props.children}
     </StyledContainer>
   )
