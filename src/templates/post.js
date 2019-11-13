@@ -11,6 +11,12 @@ import Padding from "../components/layout/Padding"
 const StyledArticle = styled.article`
   padding-top: 100px;
 
+  .kg-image-card {
+    img {
+      width: 100%;
+    }
+  }
+
   .kg-bookmark-card {
     border: 1px solid rgba(0, 0, 0, 0.2);
 
