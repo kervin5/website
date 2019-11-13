@@ -3,6 +3,7 @@ module.exports = {
     title: `Kervin Vasquez - Web Developer`,
     description: `I'm a web developer based in Los Angeles, passionate for creating robust yet user friendly solutions. Writing reusable, scalable, testable, and efficient software with Javascript and PHP is what I do best 😁.`,
     author: `@kervin5`,
+    siteUrl: `https://kervin.tech`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -57,5 +58,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
+    `gatsby-plubin-sitemap`,
   ],
 }
