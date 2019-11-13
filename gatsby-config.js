@@ -19,8 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Kervin.tech - Web Developer`,
+        short_name: `Kervin.tech`,
         start_url: `/`,
         background_color: `#F45A2C`,
         theme_color: `#F45A2C`,
