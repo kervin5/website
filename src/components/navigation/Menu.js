@@ -69,14 +69,15 @@ const Menu = () => {
         <Grid>
           <Row middle="xs" center="xs">
             {[
-              { label: "Home", id: "home" },
-              { label: "About Me", id: "aboutMe" },
-              { label: "Services", id: "services" },
-              { label: "Contact", id: "contact" },
+              { label: "Home", url: "/#home" },
+              { label: "About Me", url: "/#aboutMe" },
+              { label: "Services", url: "/#services" },
+              { label: "Contact", url: "/#contact" },
+              { label: "Blog", url: "/blog" },
             ].map((option, index) => {
               return (
-                <Col xs={12} key={option.id + index}>
-                  <Link to={`/#${option.id}`}>{option.label}</Link>
+                <Col xs={12} key={option.url + index}>
+                  <Link to={`${option.url}`}>{option.label}</Link>
                 </Col>
               )
             })}

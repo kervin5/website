@@ -17,7 +17,7 @@ const StyledArticle = styled.article`
 
     .kg-bookmark-container {
       text-decoration: none;
-      max-height: 140px;
+      align-items: center;
       display: flex;
 
       &:active {
@@ -54,8 +54,13 @@ const StyledArticle = styled.article`
 
       .kg-bookmark-thumbnail {
         position: relative;
-        min-width: 33%;
-        max-height: 100%;
+        display: flex;
+        overflow: hidden;
+
+        img {
+          height: 100%;
+          max-height: 200px;
+        }
       }
     }
   }
@@ -65,6 +70,7 @@ const Post = ({ data }) => {
   const post = data.ghostPost
   return (
     <Layout>
+      <SEO title={`Blog - ${post.title} - Kervin.tech`} />
       <Container maxwidth="720px">
         <StyledArticle className="post">
           {post.feature_image ? (
