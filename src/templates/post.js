@@ -90,7 +90,9 @@ const Post = ({ data }) => {
       <SEO title={`Blog - ${post.title} - Kervin.tech`} />
       <Container maxwidth="720px">
         <StyledArticle className="post">
-          <p className="PrimaryTag">{post.primary_tag.name}</p>
+          <p className="PrimaryTag">
+            {post.primary_tag ? post.primary_tag.name : ""}
+          </p>
           <h1>{post.title}</h1>
           <p className="Excerpt">{post.excerpt}</p>
           <hr />

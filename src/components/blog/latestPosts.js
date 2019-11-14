@@ -57,7 +57,6 @@ const StyledCard = styled.div`
     }
   }
 `
-
 const latestPosts = posts => {
   return (
     <Grid>
