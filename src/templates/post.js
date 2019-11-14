@@ -10,7 +10,7 @@ import Padding from "../components/layout/Padding"
 import PostMeta from "../components/blog/postMeta"
 
 const StyledArticle = styled.article`
-  padding-top: 100px;
+  padding-top: 50px;
 
   .PrimaryTag {
     text-transform: uppercase;
@@ -90,11 +90,13 @@ const Post = ({ data }) => {
       <SEO title={`Blog - ${post.title} - Kervin.tech`} />
       <Container maxwidth="720px">
         <StyledArticle className="post">
-          <p className="PrimaryTag">
-            {post.primary_tag ? post.primary_tag.name : ""}
-          </p>
-          <h1>{post.title}</h1>
-          <p className="Excerpt">{post.excerpt}</p>
+          <Padding>
+            <p className="PrimaryTag">
+              {post.primary_tag ? post.primary_tag.name : ""}
+            </p>
+            <h1>{post.title}</h1>
+            <p className="Excerpt">{post.excerpt}</p>
+          </Padding>
           <hr />
           <PostMeta post={post} />
           {post.feature_image ? (
