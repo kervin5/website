@@ -7,9 +7,18 @@ import Layout from "../components/layout/layout"
 import Hero from "../components/layout/Hero"
 import SEO from "../components/seo"
 import Padding from "../components/layout/Padding"
+import PostMeta from "../components/blog/postMeta"
 
 const StyledArticle = styled.article`
   padding-top: 100px;
+
+  .PrimaryTag {
+    text-transform: uppercase;
+    color: ${props => props.theme.accentColor};
+    font-size: 0.75em;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
 
   .kg-image-card {
     img {
@@ -81,12 +90,15 @@ const Post = ({ data }) => {
       <SEO title={`Blog - ${post.title} - Kervin.tech`} />
       <Container maxwidth="720px">
         <StyledArticle className="post">
+          <p className="PrimaryTag">{post.primary_tag.name}</p>
+          <h1>{post.title}</h1>
+          <p className="Excerpt">{post.excerpt}</p>
+          <hr />
+          <PostMeta post={post} />
           {post.feature_image ? (
             <Hero src={post.feature_image} alt={post.title} />
           ) : null}
           <Padding>
-            <h1>{post.title}</h1>
-
             <section dangerouslySetInnerHTML={{ __html: post.html }} />
           </Padding>
         </StyledArticle>
@@ -105,6 +117,16 @@ export const postQuery = graphql`
       slug
       feature_image
       html
+      reading_time
+      published_at(formatString: "MMM DD YYYY")
+      excerpt
+      primary_author {
+        name
+        profile_image
+      }
+      primary_tag {
+        name
+      }
     }
   }
 `

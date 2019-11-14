@@ -3,12 +3,15 @@ import { Grid, Row, Col } from "react-flexbox-grid"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
+import PostMeta from "./postMeta"
+
 const StyledCard = styled.div`
   background-color: ${props => props.theme.lightColor};
   margin-bottom: 20px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 7px 17px -6px rgba(0, 0, 0, 0.31);
+  text-align: left;
   img {
     width: 100%;
   }
@@ -19,9 +22,23 @@ const StyledCard = styled.div`
   }
 
   .Content {
-    padding: 10px;
-    p {
+    padding: 20px 20px 5px;
+
+    .PrimaryTag {
+      text-transform: uppercase;
+      color: ${props => props.theme.accentColor};
       font-size: 0.8em;
+      margin-bottom: 0;
+    }
+
+    .Title {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .Excerpt {
+      font-size: 0.8em;
+      margin-bottom: 5px;
     }
 
     a {
@@ -50,11 +67,16 @@ const latestPosts = posts => {
             <StyledCard>
               <img src={post.feature_image} alt={post.title}></img>
               <div className="Content">
+                <p className="PrimaryTag">
+                  {post.primary_tag ? post.primary_tag.name : ""}
+                </p>
                 <Link to={`/blog/${post.slug}`}>
-                  {" "}
-                  <strong>{post.title}</strong>
-                  <p>{post.excerpt.substring(0, 140)}...</p>
+                  <h3 className="Title">{post.title}</h3>
+                  <p className="Excerpt">{post.excerpt}</p>
                 </Link>
+              </div>
+              <div className="Footer">
+                <PostMeta post={post} />
               </div>
             </StyledCard>
           </Col>

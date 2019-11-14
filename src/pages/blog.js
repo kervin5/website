@@ -86,6 +86,15 @@ export const postsQuery = graphql`
         feature_image
         excerpt
         slug
+        reading_time
+        published_at(formatString: "MMM DD YYYY")
+        primary_author {
+          name
+          profile_image
+        }
+        primary_tag {
+          name
+        }
       }
     }
   }
