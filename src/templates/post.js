@@ -87,7 +87,11 @@ const Post = ({ data }) => {
   const post = data.ghostPost
   return (
     <Layout>
-      <SEO title={`Blog - ${post.title} - Kervin.tech`} />
+      <SEO
+        title={`Blog - ${post.title} - Kervin.tech`}
+        description={post.excerpt}
+        slug={"/blog/" + post.slug}
+      />
       <Container maxwidth="720px">
         <StyledArticle className="post">
           <Padding>

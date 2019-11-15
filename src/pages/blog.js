@@ -15,7 +15,10 @@ import LatestPosts from "../components/blog/latestPosts"
 const BlogPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO
+        title="Blog | JavaScript, CSS, HTML, React y más"
+        description="Este es un blog sobre JavaScript, HTML, CSS, React y muchos otros temas relacionados al desarrollo web. Es un espacio para seguir creciendo como desarrollador"
+      />
       <PageSection splat id="home">
         <Grid>
           <Row middle="xs" center="xs">
