@@ -90,7 +90,7 @@ const Post = ({ data }) => {
       <SEO
         title={`Blog - ${post.title} - Kervin.tech`}
         description={post.excerpt}
-        slug={"/blog/" + post.slug}
+        slug={`blog/${post.slug}`}
       />
       <Container maxwidth="720px">
         <StyledArticle className="post">

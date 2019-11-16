@@ -58,7 +58,7 @@ function SEO({ description, lang, meta, title, slug = "" }) {
         },
         {
           name: `twitter:image`,
-          content: `${site.siteMetadata.siteUrl}${slug}twitter-card.jpg`,
+          content: `${site.siteMetadata.siteUrl}/${slug}/seo.jpg`,
         },
         {
           name: `twitter:creator`,

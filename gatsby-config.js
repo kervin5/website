@@ -53,6 +53,14 @@ module.exports = {
       options: {
         apiUrl: `https://kervin-tech-cms.herokuapp.com`,
         contentApiKey: `89ec0ba82ec748c62ba8d33abe`,
+        plugins: [
+          {
+            resolve: `gatsby-ghost-social-cards`,
+            options: {
+              base: `base.jpg`,
+            },
+          },
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
