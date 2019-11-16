@@ -8,6 +8,7 @@ import Hero from "../components/layout/Hero"
 import SEO from "../components/seo"
 import Padding from "../components/layout/Padding"
 import PostMeta from "../components/blog/postMeta"
+import Share from "../components/ui/Share"
 
 const StyledArticle = styled.article`
   padding-top: 50px;
@@ -110,6 +111,7 @@ const Post = ({ data }) => {
             <section dangerouslySetInnerHTML={{ __html: post.html }} />
           </Padding>
         </StyledArticle>
+        <Share url={`https://kervin.tech/blog/${post.slug}`} />
       </Container>
     </Layout>
   )

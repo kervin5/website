@@ -4,6 +4,7 @@ module.exports = {
     description: `I'm a web developer based in Los Angeles, passionate for creating robust yet user friendly solutions. Writing reusable, scalable, testable, and efficient software with Javascript and PHP is what I do best 😁.`,
     author: `@kervin5`,
     siteUrl: `https://kervin.tech`,
+    twitterHandle: "@kervin5",
   },
   plugins: [
     `gatsby-plugin-styled-components`,

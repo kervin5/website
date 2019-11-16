@@ -53,6 +53,10 @@ function SEO({ description, lang, meta, title, slug = "" }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: `${site.siteMetadata.siteUrl}/${slug}/seo.jpg`,
+        },
+        {
           name: `twitter:card`,
           content: `summary_large_image`,
         },
