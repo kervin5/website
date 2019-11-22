@@ -1,5 +1,6 @@
 import React from "react"
 import { theme } from "../layout/Theme"
+import PropTypes from "prop-types"
 
 const HTag = ({ as, children, weight, margin, nomargin, color, id }) => {
   const TagToRender = as
@@ -24,6 +25,10 @@ HTag.defaultProps = {
   weight: "bold",
   margin: "1.45rem",
   color: "darkColor",
+}
+
+HTag.propTypes = {
+  as: PropTypes.string,
 }
 
 export default HTag

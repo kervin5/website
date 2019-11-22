@@ -73,6 +73,7 @@ const Menu = () => {
               { label: "About Me", url: "/#aboutMe" },
               { label: "Services", url: "/#services" },
               { label: "Contact", url: "/#contact" },
+              { label: "Projects", url: "/#projects" },
               { label: "Blog", url: "/blog" },
             ].map((option, index) => {
               return (

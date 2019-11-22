@@ -58,12 +58,12 @@ const StyledCard = styled.div`
     }
   }
 `
-const latestPosts = () => {
+const topThreePosts = () => {
   return (
     <StaticQuery
       query={graphql`
-        query latestPostsQuery {
-          allGhostPost(limit: 10) {
+        query latestThreePostsQuery {
+          allGhostPost(limit: 3) {
             nodes {
               title
               id
@@ -112,4 +112,4 @@ const latestPosts = () => {
   )
 }
 
-export default latestPosts
+export default topThreePosts

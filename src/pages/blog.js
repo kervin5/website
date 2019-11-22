@@ -39,7 +39,7 @@ const BlogPage = ({ data }) => {
               </Padding>
             </Col>
             <Col xs={12}>
-              <LatestPosts posts={data.allGhostPost.nodes} />
+              <LatestPosts tenPosts />
             </Col>
           </Row>
         </Grid>
