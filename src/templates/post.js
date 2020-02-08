@@ -1,7 +1,7 @@
-import React from "react"
+import React, { useEffect, Component } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-
+import Prism from "prismjs"
 import Container from "../components/layout/Container"
 import Layout from "../components/layout/layout"
 import Hero from "../components/layout/Hero"
@@ -84,37 +84,50 @@ const StyledArticle = styled.article`
   }
 `
 
-const Post = ({ data }) => {
-  const post = data.ghostPost
-  return (
-    <Layout>
-      <SEO
-        title={`Blog - ${post.title} - Kervin.tech`}
-        description={post.excerpt}
-        slug={`blog/${post.slug}`}
-      />
-      <Container maxwidth="720px">
-        <StyledArticle className="post">
-          <Padding>
-            <p className="PrimaryTag">
-              {post.primary_tag ? post.primary_tag.name : ""}
-            </p>
-            <h1>{post.title}</h1>
-            <p className="Excerpt">{post.excerpt}</p>
-          </Padding>
-          <hr />
-          <PostMeta post={post} />
-          {post.feature_image ? (
-            <Hero src={post.feature_image} alt={post.title} />
-          ) : null}
-          <Padding>
-            <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          </Padding>
-        </StyledArticle>
-        <Share url={`https://kervin.tech/blog/${post.slug}`} />
-      </Container>
-    </Layout>
-  )
+class Post extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { post: props.data.ghostPost }
+  }
+  // const post = data.ghostPost;
+  render() {
+    return (
+      <Layout>
+        <SEO
+          title={`Blog - ${this.state.post.title} - Kervin.tech`}
+          description={this.state.post.excerpt}
+          slug={`blog/${this.state.post.slug}`}
+        />
+        <Container maxwidth="720px">
+          <StyledArticle className="post">
+            <Padding>
+              <p className="PrimaryTag">
+                {this.state.post.primary_tag
+                  ? this.state.post.primary_tag.name
+                  : ""}
+              </p>
+              <h1>{this.state.post.title}</h1>
+              <p className="Excerpt">{this.state.post.excerpt}</p>
+            </Padding>
+            <hr />
+            <PostMeta post={post} />
+            {this.state.post.feature_image ? (
+              <Hero
+                src={this.state.post.feature_image}
+                alt={this.state.post.title}
+              />
+            ) : null}
+            <Padding>
+              <section
+                dangerouslySetInnerHTML={{ __html: this.state.post.html }}
+              />
+            </Padding>
+          </StyledArticle>
+          <Share url={`https://kervin.tech/blog/${this.state.post.slug}`} />
+        </Container>
+      </Layout>
+    )
+  }
 }
 
 export default Post
