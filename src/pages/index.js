@@ -154,6 +154,7 @@ const IndexPage = () => (
             <Button href="/blog" as="a">
               Ver Más
             </Button>
+            <br />
           </Col>
         </Row>
       </Grid>

@@ -21,6 +21,10 @@ const StyledDiv = styled.div`
     fill: ${props =>
       props.color ? props.theme[props.color] : props.theme.mainColor};
   }
+
+  @media (max-width: 600px) {
+    left: ${props => (props.position === "right" ? "40vw" : "-230vw")};
+  }
 `
 
 const SVG = ({ position = "right" }) => {
