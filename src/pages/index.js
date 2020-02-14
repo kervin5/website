@@ -3,7 +3,7 @@ import { Grid, Row, Col } from "react-flexbox-grid"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import DevicesImages from "../components/images/DevicesImages"
-
+import Button from "../components/ui/Button"
 import PageSection from "../components/layout/PageSection"
 import Padding from "../components/layout/Padding"
 import HTag from "../components/ui/htag"
@@ -151,6 +151,9 @@ const IndexPage = () => (
           </Col>
           <Col xs={12}>
             <TopThreePosts />
+            <Button href="/blog" as="a">
+              Ver Más
+            </Button>
           </Col>
         </Row>
       </Grid>

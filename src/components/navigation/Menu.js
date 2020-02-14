@@ -54,6 +54,7 @@ const StyledMenuOptions = styled.div`
     text-decoration: none;
     &:hover {
       font-size: 1.5em;
+      color: ${props => props.theme.accentColor};
     }
   }
 `

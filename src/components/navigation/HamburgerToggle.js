@@ -5,6 +5,7 @@ const StyledHabmburgerToggle = styled.div`
   float: right;
   position: relative;
   z-index: 100;
+  cursor: pointer;
   span {
     height: 5px;
     width: 30px;
