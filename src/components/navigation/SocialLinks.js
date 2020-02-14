@@ -13,6 +13,12 @@ const StyledSocialLinks = styled.div`
   a {
     margin: 10px;
     transform: scale(0.9);
+    transition: 300ms;
+    animation-timing-function: cubic-bezier(0.08, 0.95, 1, 0.56);
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `
 

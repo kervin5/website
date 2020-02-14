@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Splat from "../svg/splat"
+// import Splat from "../svg/splat"
 import MorphingSplat from "../svg/morphing-splat"
 
 const StyledPageSection = styled.div`
