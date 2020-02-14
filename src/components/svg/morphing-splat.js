@@ -33,12 +33,12 @@ const SVG = ({ position = "right" }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setReversed(reversed => !reversed)
-    }, 7000)
+    }, 8000)
     return () => clearInterval(interval)
   }, [])
   return (
     <StyledDiv position={position} className="MorphingSVG">
-      <MorphReplace rotation="none" height="100%" duration={5000}>
+      <MorphReplace rotation="none" height="100%" duration={6000}>
         {reversed ? (
           <SplatReverseSVG key="perro" />
         ) : (
