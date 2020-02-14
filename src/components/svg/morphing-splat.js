@@ -13,7 +13,8 @@ const StyledDiv = styled.div`
   /* overflow: hidden; */
 
   svg {
-    height: 100%;
+    height: 100% !important;
+    width: auto !important;
   }
 
   path {
@@ -33,7 +34,7 @@ const SVG = ({ position = "right" }) => {
   }, [])
   return (
     <StyledDiv position={position} className="MorphingSVG">
-      <MorphReplace width="100%" rotation="none" duration={6000}>
+      <MorphReplace rotation="none" height="100%" duration={6000}>
         {reversed ? (
           <SplatReverseSVG key="perro" />
         ) : (
