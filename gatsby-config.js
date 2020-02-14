@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Kervin Vasquez - Web Developer`,
@@ -52,8 +56,8 @@ module.exports = {
     {
       resolve: `gatsby-source-ghost`,
       options: {
-        apiUrl: `https://kervin-tech-cms.herokuapp.com`,
-        contentApiKey: `89ec0ba82ec748c62ba8d33abe`,
+        apiUrl: process.env.GATSBY_CMS_API_URL,
+        contentApiKey: process.env.GATSBY_CMS_CONTENT_API_KEY,
         plugins: [
           {
             resolve: `gatsby-ghost-social-cards`,
