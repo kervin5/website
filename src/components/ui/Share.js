@@ -47,6 +47,7 @@ const StyledShareButton = styled.div`
   transition: 100ms;
   &:hover {
     transform: scale(1.1);
+    cursor: pointer;
   }
 
   @media (max-width: 700px) {
