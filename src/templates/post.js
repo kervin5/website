@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Prism from "prismjs"
+import { DiscussionEmbed } from "disqus-react"
 import Container from "../components/layout/Container"
 import Layout from "../components/layout/layout"
 import Hero from "../components/layout/Hero"
@@ -9,6 +10,14 @@ import SEO from "../components/seo"
 import Padding from "../components/layout/Padding"
 import PostMeta from "../components/blog/postMeta"
 import Share from "../components/ui/Share"
+import UserMeta from "../components/blog/userMeta"
+
+const StyledBlogPost = styled.div`
+  width: 100%;
+  .Comments {
+    margin: 20px auto;
+  }
+`
 
 const StyledArticle = styled.article`
   padding-top: 50px;
@@ -86,6 +95,10 @@ const StyledArticle = styled.article`
 
 const Post = ({ data }) => {
   const post = data.ghostPost
+  const disqusConfig = {
+    shortname: process.env.GATSBY_DISQUS_NAME,
+    config: { identifier: post.slug, title: post.title },
+  }
   useEffect(() => {
     // call the highlightAll() function to style our code blocks
     Prism.highlightAll()
@@ -93,29 +106,36 @@ const Post = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title={`Blog - ${post.title} - Kervin.tech`}
+        title={`${post.title} - Kervin.tech Blog`}
         description={post.excerpt}
         slug={`blog/${post.slug}`}
       />
       <Container maxwidth="720px">
-        <StyledArticle className="post">
-          <Padding>
-            <p className="PrimaryTag">
-              {post.primary_tag ? post.primary_tag.name : ""}
-            </p>
-            <h1>{post.title}</h1>
-            <p className="Excerpt">{post.excerpt}</p>
-          </Padding>
+        <StyledBlogPost>
+          <StyledArticle className="post">
+            <Padding>
+              <p className="PrimaryTag">
+                {post.primary_tag ? post.primary_tag.name : ""}
+              </p>
+              <h1>{post.title}</h1>
+              <p className="Excerpt">{post.excerpt}</p>
+            </Padding>
+            <hr />
+            <PostMeta post={post} />
+            {post.feature_image ? (
+              <Hero src={post.feature_image} alt={post.title} />
+            ) : null}
+            <Padding>
+              <section dangerouslySetInnerHTML={{ __html: post.html }} />
+            </Padding>
+          </StyledArticle>
+          <Share url={`https://kervin.tech/blog/${post.slug}`} />
+          <UserMeta post={post} />
           <hr />
-          <PostMeta post={post} />
-          {post.feature_image ? (
-            <Hero src={post.feature_image} alt={post.title} />
-          ) : null}
-          <Padding>
-            <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          </Padding>
-        </StyledArticle>
-        <Share url={`https://kervin.tech/blog/${post.slug}`} />
+          <div className="Comments">
+            <DiscussionEmbed {...disqusConfig} />
+          </div>
+        </StyledBlogPost>
       </Container>
     </Layout>
   )
@@ -137,6 +157,7 @@ export const postQuery = graphql`
       primary_author {
         name
         profile_image
+        bio
       }
       primary_tag {
         name

@@ -11,6 +11,8 @@ import Highlight from "../components/ui/Highlight"
 import Envelope from "../components/svg/envelope"
 import SocialLinks from "../components/navigation/SocialLinks"
 import LatestPosts from "../components/blog/latestPosts"
+import SearchBar from "../components/blog/searchBar"
+// import SearchBarD from "../components/blog/searchBarD"
 
 const BlogPage = ({ data }) => {
   return (
@@ -24,6 +26,8 @@ const BlogPage = ({ data }) => {
           <Row middle="xs" center="xs">
             <Col xs={12}>
               <HTag nomargin>Blog</HTag>
+              <SearchBar />
+              {/* <SearchBarD /> */}
             </Col>
           </Row>
         </Grid>
@@ -39,7 +43,7 @@ const BlogPage = ({ data }) => {
               </Padding>
             </Col>
             <Col xs={12}>
-              <LatestPosts tenPosts />
+              <LatestPosts tenPosts showFeatured />
             </Col>
           </Row>
         </Grid>

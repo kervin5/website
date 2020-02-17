@@ -5,6 +5,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 import PostMeta from "./postMeta"
+import WidePostCard from "./widePostCard"
 
 const StyledCard = styled.div`
   background-color: ${props => props.theme.lightColor};
@@ -58,7 +59,7 @@ const StyledCard = styled.div`
     }
   }
 `
-const latestPosts = () => {
+const latestPosts = ({ showFeatured }) => {
   return (
     <StaticQuery
       query={graphql`
@@ -86,25 +87,32 @@ const latestPosts = () => {
       render={data => (
         <Grid>
           <Row middle="xs" center="xs">
-            {data.allGhostPost.nodes.map((post, index) => (
-              <Col key={"Post" + index} md={4}>
-                <StyledCard>
-                  <img src={post.feature_image} alt={post.title}></img>
-                  <div className="Content">
-                    <p className="PrimaryTag">
-                      {post.primary_tag ? post.primary_tag.name : ""}
-                    </p>
-                    <Link to={`/blog/${post.slug}`}>
-                      <h3 className="Title">{post.title}</h3>
-                      <p className="Excerpt">{post.excerpt}</p>
-                    </Link>
-                  </div>
-                  <div className="Footer">
-                    <PostMeta post={post} />
-                  </div>
-                </StyledCard>
-              </Col>
-            ))}
+            {data.allGhostPost.nodes.map((post, index) =>
+              showFeatured && index === 0 ? (
+                <Col key={"Post" + index} md={12}>
+                  <WidePostCard post={post} />
+                  <br />
+                </Col>
+              ) : (
+                <Col key={"Post" + index} md={4}>
+                  <StyledCard>
+                    <img src={post.feature_image} alt={post.title}></img>
+                    <div className="Content">
+                      <p className="PrimaryTag">
+                        {post.primary_tag ? post.primary_tag.name : ""}
+                      </p>
+                      <Link to={`/blog/${post.slug}`}>
+                        <h3 className="Title">{post.title}</h3>
+                        <p className="Excerpt">{post.excerpt}</p>
+                      </Link>
+                    </div>
+                    <div className="Footer">
+                      <PostMeta post={post} />
+                    </div>
+                  </StyledCard>
+                </Col>
+              )
+            )}
           </Row>
         </Grid>
       )}
