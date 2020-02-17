@@ -12,7 +12,11 @@ exports.onCreateNode = ({ node, actions }, { base }) => {
 
     return Promise.all([
       jimp.read(input),
-      jimp.loadFont(jimp.FONT_SANS_128_BLACK),
+      jimp.loadFont(
+        node.title.length > 38
+          ? jimp.FONT_SANS_64_BLACK
+          : jimp.FONT_SANS_128_BLACK
+      ),
       jimp.loadFont(jimp.FONT_SANS_32_BLACK),
       // jimp.read(`https:${node.primary_author.profile_image}`)
       // .then(image => {
