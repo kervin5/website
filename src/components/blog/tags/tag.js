@@ -33,10 +33,10 @@ const StringToColor = (function() {
           { bg: "#EC2049", font: "black" },
           { bg: "#F26B38", font: "black" },
           { bg: "#F7DB4F", font: "black" },
-          { bg: "#2F9599", font: "black" },
+          { bg: "#2F9599", font: "white" },
           { bg: "#45ADA8", font: "black" },
-          { bg: "#547980", font: "black" },
-          { bg: "#594F4F", font: "black" },
+          { bg: "#547980", font: "white" },
+          { bg: "#594F4F", font: "white" },
           { bg: "#F9D423", font: "black" },
           { bg: "#FC913A", font: "black" },
         ]
@@ -52,7 +52,11 @@ const StringToColor = (function() {
 })()
 
 const Tag = ({ children }) => {
-  return <StyledTag color={StringToColor.next(children)}>#{children}</StyledTag>
+  return (
+    <StyledTag className="BlogTag" color={StringToColor.next(children)}>
+      #{children}
+    </StyledTag>
+  )
 }
 
 export default Tag

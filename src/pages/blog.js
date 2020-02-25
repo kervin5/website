@@ -12,6 +12,7 @@ import Envelope from "../components/svg/envelope"
 import SocialLinks from "../components/navigation/SocialLinks"
 import LatestPosts from "../components/blog/latestPosts"
 import SearchBar from "../components/blog/searchBar"
+import AllTags from "../components/blog/allTags"
 // import SearchBarD from "../components/blog/searchBarD"
 
 const BlogPage = ({ data }) => {
@@ -27,6 +28,7 @@ const BlogPage = ({ data }) => {
             <Col xs={12}>
               <HTag nomargin>Blog</HTag>
               <SearchBar />
+              <AllTags />
               {/* <SearchBarD /> */}
             </Col>
           </Row>
