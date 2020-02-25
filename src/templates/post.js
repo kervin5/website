@@ -11,6 +11,7 @@ import Padding from "../components/layout/Padding"
 import PostMeta from "../components/blog/postMeta"
 import Share from "../components/ui/Share"
 import UserMeta from "../components/blog/userMeta"
+import Tags from "../components/blog/tags/tags"
 
 const StyledBlogPost = styled.div`
   width: 100%;
@@ -119,7 +120,9 @@ const Post = ({ data }) => {
               </p>
               <h1>{post.title}</h1>
               <p className="Excerpt">{post.excerpt}</p>
+              <Tags tags={post.tags} />
             </Padding>
+
             <hr />
             <PostMeta post={post} />
             {post.feature_image ? (
@@ -161,6 +164,10 @@ export const postQuery = graphql`
       }
       primary_tag {
         name
+      }
+      tags {
+        name
+        id
       }
     }
   }

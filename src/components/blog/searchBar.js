@@ -34,7 +34,9 @@ const StyledSearchResults = styled.ul`
   text-decoration: none;
   max-height: 250px;
   overflow-y: scroll;
-  display: none;
+  height: 0.01px;
+  transition: 300ms;
+  margin-bottom: 0;
   li {
     list-style: none;
   }
@@ -57,17 +59,16 @@ const StyledSearchResults = styled.ul`
 `
 
 const StyledSearchArea = styled.div`
-  border-radius: 30px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.31);
+  border-radius: 5px;
+  box-shadow: 0px 7px 17px -6px rgba(0, 0, 0, 0.31);
   transition: 100ms;
   border: 1px solid gray;
   overflow: hidden;
   background-color: ${props => props.theme.lightColor};
   &:focus-within {
-    box-shadow: 0px 7px 17px -6px rgba(0, 0, 0, 0.31);
     /* transform: scale(1.2); */
     ul {
-      display: block;
+      height: 200px;
     }
   }
 `
