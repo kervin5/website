@@ -17,6 +17,9 @@ const StyledBlogPost = styled.div`
   width: 100%;
   .Comments {
     margin: 20px auto;
+    @media (max-width: 720px) {
+      padding: 0 20px;
+    }
   }
 `
 

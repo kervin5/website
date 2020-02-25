@@ -10,7 +10,7 @@ import HTag from "../components/ui/htag"
 import Highlight from "../components/ui/Highlight"
 import Envelope from "../components/svg/envelope"
 import SocialLinks from "../components/navigation/SocialLinks"
-import LatestPosts from "../components/blog/latestPosts"
+import AllPosts from "../components/blog/allPosts"
 import SearchBar from "../components/blog/searchBar"
 import AllTags from "../components/blog/allTags"
 // import SearchBarD from "../components/blog/searchBarD"
@@ -45,7 +45,7 @@ const BlogPage = ({ data }) => {
               </Padding>
             </Col>
             <Col xs={12}>
-              <LatestPosts tenPosts showFeatured />
+              <AllPosts tenPosts showFeatured />
             </Col>
           </Row>
         </Grid>

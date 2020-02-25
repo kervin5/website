@@ -28,7 +28,6 @@ const topThreePosts = () => {
         }
       `}
       render={data => {
-        console.log(data)
         return (
           <StyledTagsBar>
             <Tags
