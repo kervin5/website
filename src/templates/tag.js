@@ -103,7 +103,7 @@ export const tagsPostsQuery = graphql`
         primary_tag {
           name
         }
-
+        plaintext
         tags {
           id
           name
