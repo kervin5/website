@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 const StyledTag = styled.span`
   display: inline-block;
@@ -9,6 +10,11 @@ const StyledTag = styled.span`
   border-radius: 5px;
   font-size: 0.8em;
   margin-right: 0.3rem;
+  transition: 300ms;
+  &:hover {
+    transform: scale(1.1) rotate(2deg);
+    cursor: pointer;
+  }
 `
 
 const StringToColor = (function() {
@@ -51,11 +57,13 @@ const StringToColor = (function() {
   }
 })()
 
-const Tag = ({ children }) => {
+const Tag = ({ children, slug }) => {
   return (
-    <StyledTag className="BlogTag" color={StringToColor.next(children)}>
-      #{children}
-    </StyledTag>
+    <Link to={`/blog/tag/${slug}`}>
+      <StyledTag className="BlogTag" color={StringToColor.next(children)}>
+        #{children}
+      </StyledTag>
+    </Link>
   )
 }
 

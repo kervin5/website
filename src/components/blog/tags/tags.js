@@ -10,7 +10,9 @@ const Tags = ({ tags }) => {
   return (
     <StyledTags>
       {tags.map((tag, index) => (
-        <Tag key={tag.id + "Tag"}>{tag.name}</Tag>
+        <Tag key={tag.id + "Tag"} slug={tag.slug}>
+          {tag.name}
+        </Tag>
       ))}
     </StyledTags>
   )

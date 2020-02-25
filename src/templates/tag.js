@@ -1,6 +1,6 @@
 import React from "react"
 import { Grid, Row, Col } from "react-flexbox-grid"
-// import { graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 
@@ -10,26 +10,25 @@ import HTag from "../components/ui/htag"
 import Highlight from "../components/ui/Highlight"
 import Envelope from "../components/svg/envelope"
 import SocialLinks from "../components/navigation/SocialLinks"
-import AllPosts from "../components/blog/allPosts"
-import SearchBar from "../components/blog/searchBar"
+import PostsGrid from "../components/blog/postsGrid"
 import AllTags from "../components/blog/allTags"
-// import SearchBarD from "../components/blog/searchBarD"
 
-const BlogPage = ({ data }) => {
+const TagsPage = props => {
+  const { data, pageContext } = props
+  const pageTag = pageContext.name
+
   return (
     <Layout>
       <SEO
-        title="Blog | JavaScript, CSS, HTML, React y más"
-        description="Este es un blog sobre JavaScript, HTML, CSS, React y muchos otros temas relacionados al desarrollo web. Es un espacio para seguir creciendo como desarrollador"
+        title={`Tag: ${pageTag} | Blog | JavaScript, CSS, HTML, React y más`}
+        description={`Tag: ${pageTag} | Este es un blog sobre JavaScript, HTML, CSS, React y muchos otros temas relacionados al desarrollo web. Es un espacio para seguir creciendo como desarrollador`}
       />
       <PageSection splat id="home">
         <Grid>
           <Row middle="xs" center="xs">
             <Col xs={12}>
-              <HTag nomargin>Blog</HTag>
-              <SearchBar />
+              <HTag nomargin>{pageTag}</HTag>
               <AllTags />
-              {/* <SearchBarD /> */}
             </Col>
           </Row>
         </Grid>
@@ -40,12 +39,12 @@ const BlogPage = ({ data }) => {
             <Col xs={12}>
               <Padding>
                 <HTag>
-                  Latets <Highlight>Posts</Highlight>
+                  Posts related to <Highlight>{pageTag}</Highlight>
                 </HTag>
               </Padding>
             </Col>
             <Col xs={12}>
-              <AllPosts tenPosts showFeatured />
+              <PostsGrid showFeatured posts={data.allGhostPost.nodes} />
             </Col>
           </Row>
         </Grid>
@@ -84,27 +83,33 @@ const BlogPage = ({ data }) => {
   )
 }
 
-export default BlogPage
+export default TagsPage
 
-// export const postsQuery = graphql`
-//   query MyQuery {
-//     allGhostPost(limit: 6) {
-//       nodes {
-//         title
-//         id
-//         feature_image
-//         excerpt
-//         slug
-//         reading_time
-//         published_at(formatString: "MMM DD YYYY")
-//         primary_author {
-//           name
-//           profile_image
-//         }
-//         primary_tag {
-//           name
-//         }
-//       }
-//     }
-//   }
-// `
+export const tagsPostsQuery = graphql`
+  query TagsPostsQuery($slug: String!) {
+    allGhostPost(filter: { tags: { elemMatch: { slug: { eq: $slug } } } }) {
+      nodes {
+        title
+        id
+        feature_image
+        excerpt
+        slug
+        reading_time
+        published_at(formatString: "MMM DD YYYY")
+        primary_author {
+          name
+          profile_image
+        }
+        primary_tag {
+          name
+        }
+
+        tags {
+          id
+          name
+          slug
+        }
+      }
+    }
+  }
+`

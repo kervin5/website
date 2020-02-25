@@ -22,6 +22,7 @@ const topThreePosts = () => {
               node {
                 id
                 name
+                slug
               }
             }
           }

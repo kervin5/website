@@ -171,6 +171,7 @@ export const postQuery = graphql`
       tags {
         name
         id
+        slug
       }
     }
   }
