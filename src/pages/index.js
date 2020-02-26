@@ -10,9 +10,10 @@ import HTag from "../components/ui/htag"
 import Highlight from "../components/ui/Highlight"
 import Logo from "../components/svg/logo"
 import PersonIllustration from "../components/svg/person"
-import Envelope from "../components/svg/envelope"
+
 import SocialLinks from "../components/navigation/SocialLinks"
 import TopThreePosts from "../components/blog/topThreePosts"
+import ContactInfo from "../components/ui/ContactInfo"
 
 const IndexPage = () => (
   <Layout>
@@ -160,33 +161,7 @@ const IndexPage = () => (
       </Grid>
     </PageSection>
     <PageSection splat="left" id="contact">
-      <Grid>
-        <Row middle="xs">
-          <Col xs={12} md={6}>
-            <Padding>
-              <HTag>
-                Let's <Highlight>talk</Highlight>
-              </HTag>
-              <p>
-                Maybe you need a web site, or perhaps you're looking for an
-                experienced full-stack developer to join your team or to
-                collaborate in a project or event. Maybe there's a secret that
-                no one can ever know{" "}
-                <span role="img" aria-label="scared emoji">
-                  😨
-                </span>
-                , or you simply have a question regarding my services. Whatever
-                the reason may be, feel free to{" "}
-                <a href="mailto:kervinlvh@gmail.com">drop me a line</a>.
-              </p>
-              <SocialLinks />
-            </Padding>
-          </Col>
-          <Col xs={12} md={6}>
-            <Envelope />
-          </Col>
-        </Row>
-      </Grid>
+      <ContactInfo />
     </PageSection>
   </Layout>
 )

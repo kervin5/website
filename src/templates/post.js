@@ -12,6 +12,7 @@ import PostMeta from "../components/blog/postMeta"
 import Share from "../components/ui/Share"
 import UserMeta from "../components/blog/userMeta"
 import Tags from "../components/blog/tags/tags"
+import SubscribeForm from "../components/forms/SubscribeForm"
 
 const StyledBlogPost = styled.div`
   width: 100%;
@@ -136,6 +137,7 @@ const Post = ({ data }) => {
             </Padding>
           </StyledArticle>
           <Share url={`https://kervin.tech/blog/${post.slug}`} />
+          <SubscribeForm />
           <UserMeta post={post} />
           <hr />
           <div className="Comments">

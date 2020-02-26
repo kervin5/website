@@ -5,6 +5,7 @@ export const theme = {
   mainColor: "#ffcc00",
   secondaryColor: "#F45A2C",
   accentColor: "#07538C",
+  accentColor2: "#00AAB5",
   darkColor: "black",
   lightColor: "white",
   containerWidth: "1130px",

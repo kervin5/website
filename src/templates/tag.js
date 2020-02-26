@@ -8,10 +8,10 @@ import PageSection from "../components/layout/PageSection"
 import Padding from "../components/layout/Padding"
 import HTag from "../components/ui/htag"
 import Highlight from "../components/ui/Highlight"
-import Envelope from "../components/svg/envelope"
-import SocialLinks from "../components/navigation/SocialLinks"
 import PostsGrid from "../components/blog/postsGrid"
 import AllTags from "../components/blog/allTags"
+import ContactInfo from "../components/ui/ContactInfo"
+import SubscribeForm from "../components/forms/SubscribeForm"
 
 const TagsPage = props => {
   const { data, pageContext } = props
@@ -47,38 +47,15 @@ const TagsPage = props => {
             <Col xs={12}>
               <PostsGrid showFeatured posts={data.allGhostPost.nodes} />
             </Col>
+            <Col xs={12}>
+              <SubscribeForm />
+            </Col>
           </Row>
         </Grid>
       </PageSection>
 
       <PageSection splat="right" id="contact">
-        <Grid>
-          <Row middle="xs">
-            <Col xs={12} md={6}>
-              <Padding>
-                <HTag>
-                  Let's <Highlight>talk</Highlight>
-                </HTag>
-                <p>
-                  Maybe you need a web site, or perhaps you're looking for an
-                  experienced full-stack developer to join your team or to
-                  collaborate in a project or event. Maybe there's a secret that
-                  no one can ever know{" "}
-                  <span role="img" aria-label="scared emoji">
-                    😨
-                  </span>
-                  , or you simply have a question regarding my services.
-                  Whatever the reason may be, feel free to{" "}
-                  <a href="mailto:kervinlvh@gmail.com">drop me a line</a>.
-                </p>
-                <SocialLinks />
-              </Padding>
-            </Col>
-            <Col xs={12} md={6}>
-              <Envelope />
-            </Col>
-          </Row>
-        </Grid>
+        <ContactInfo />
       </PageSection>
     </Layout>
   )
