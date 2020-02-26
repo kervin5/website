@@ -12,6 +12,7 @@ const StyledPageSection = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  /* overflow: hidden; */
 
   .Content {
     position: relative;
