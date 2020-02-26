@@ -100,6 +100,8 @@ const StyledArticle = styled.article`
 
 const Post = ({ data }) => {
   const post = data.ghostPost
+  const postUrl = `https://kervin.tech/blog/${post.slug}`
+  console.log(JSON.stringify(post.plaintext))
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: { identifier: post.slug, title: post.title },
@@ -136,7 +138,7 @@ const Post = ({ data }) => {
               <section dangerouslySetInnerHTML={{ __html: post.html }} />
             </Padding>
           </StyledArticle>
-          <Share url={`https://kervin.tech/blog/${post.slug}`} />
+          <Share url={postUrl} />
 
           <UserMeta post={post} />
           <Padding padding="0 20px">
@@ -148,6 +150,32 @@ const Post = ({ data }) => {
           </div>
         </StyledBlogPost>
       </Container>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: `{ "@context": "https://schema.org", 
+          "@type": "BlogPosting",
+          "headline": "${post.title}",
+          "alternativeHeadline": "${post.title}",
+          "image": "${post.feature_image}",
+          "editor": "Kervin Vasquez", 
+          "genre": "${post.primary_tag.name} tips", 
+          "keywords": "${post.tags.map(tag => tag.name).join(" ")}", 
+          "wordcount": "1120",
+          "publisher": "Kervin Tech",
+          "url": "${postUrl}",
+          "datePublished": "${post.published_at}",
+          "dateCreated": "${post.created_at}",
+          "dateModified": "${post.updated_at}",
+          "description": "${post.excerpt}",
+          "articleBody": ${JSON.stringify(post.plaintext)},
+            "author": {
+             "@type": "Person",
+             "name": "${post.primary_author.name}"
+           }
+          `,
+        }}
+      />
     </Layout>
   )
 }
@@ -164,7 +192,10 @@ export const postQuery = graphql`
       html
       reading_time
       published_at(formatString: "MMM DD YYYY")
+      created_at(formatString: "MMM DD YYYY")
+      updated_at(formatString: "MMM DD YYYY")
       excerpt
+      plaintext
       primary_author {
         name
         profile_image
