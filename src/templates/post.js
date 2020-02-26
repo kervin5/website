@@ -163,7 +163,7 @@ const Post = ({ data }) => {
           "keywords": "${post.tags.map(tag => tag.name).join(" ")}", 
           "wordcount": "1120",
           "publisher": {
-            "@type": "Corporation",
+            "@type": "Organization",
             "name": "Kervin Tech"
           },
           "url": "${postUrl}",
