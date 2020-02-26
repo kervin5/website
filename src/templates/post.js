@@ -165,7 +165,15 @@ const Post = ({ data }) => {
           "publisher": {
             "@type": "Organization",
             "name": "Kervin Tech",
-            "logo": "https://kervin.tech/logo.PNG",
+            "logo": {
+              "@context": "http://schema.org",
+              "@type": "ImageObject",
+              "author": "Kervin Vasquez",
+              "contentUrl": "http://kervin.tech/logo.PNG",
+              "datePublished": "2020-02-26",
+              "description": "This is the company logo of Kervin Tech",
+              "name": "Kervin Tech Logo"
+            },
             "url": "https://kervin.tech"
           },
           "url": "${postUrl}",
