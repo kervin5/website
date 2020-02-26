@@ -17,7 +17,7 @@ import ContactInfo from "../components/ui/ContactInfo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Home" image="seo.PNG" />
     <PageSection splat id="home">
       <Grid>
         <Row middle="xs" center="xs">
