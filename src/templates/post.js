@@ -165,7 +165,8 @@ const Post = ({ data }) => {
           "publisher": {
             "@type": "Organization",
             "name": "Kervin Tech",
-            "logo": "https://kervin.tech/logo.PNG"
+            "logo": "https://kervin.tech/logo.PNG",
+            "url": "https://kervin.tech",
           },
           "url": "${postUrl}",
           "datePublished": "${post.published_at}",
