@@ -164,7 +164,8 @@ const Post = ({ data }) => {
           "wordcount": "1120",
           "publisher": {
             "@type": "Organization",
-            "name": "Kervin Tech"
+            "name": "Kervin Tech",
+            "logo": "https://kervin.tech/logo.PNG"
           },
           "url": "${postUrl}",
           "datePublished": "${post.published_at}",
