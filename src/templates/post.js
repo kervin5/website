@@ -168,11 +168,12 @@ const Post = ({ data }) => {
           "dateCreated": "${post.created_at}",
           "dateModified": "${post.updated_at}",
           "description": "${post.excerpt}",
-          "articleBody": "${post.plaintext.replace(/[^a-zA-Z0-9 ]/g, "")}",
+          "articleBody": ${JSON.stringify(post.plaintext)},
             "author": {
              "@type": "Person",
              "name": "${post.primary_author.name}"
            }
+          }
           `,
         }}
       />
