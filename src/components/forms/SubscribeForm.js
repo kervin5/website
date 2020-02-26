@@ -75,7 +75,7 @@ const SubscribeForm = () => {
     "https://tech.us4.list-manage.com/subscribe/post?u=19f3716c8cf547aef98cc35f6&amp;id=931a3f897e"
   return (
     <StyledSubscribeForm className="SubscribeForm">
-      <Htag>Suscribete</Htag>
+      <Htag>Suscríbete</Htag>
       <p>
         Si quieres mantenerte al dia con las ultimas novedades del blog,
         participar en concursos y tener acceso a contenido exclusivo, no olvides

@@ -162,7 +162,10 @@ const Post = ({ data }) => {
           "genre": "${post.primary_tag.name} tips", 
           "keywords": "${post.tags.map(tag => tag.name).join(" ")}", 
           "wordcount": "1120",
-          "publisher": "Kervin Tech",
+          "publisher": {
+            "@type": "Person",
+            "name": "${post.primary_author.name}"
+          },
           "url": "${postUrl}",
           "datePublished": "${post.published_at}",
           "dateCreated": "${post.created_at}",
@@ -172,7 +175,8 @@ const Post = ({ data }) => {
             "author": {
              "@type": "Person",
              "name": "${post.primary_author.name}"
-           }
+           },
+           "mainEntityOfPage": "True"
           }
           `,
         }}
