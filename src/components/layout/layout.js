@@ -9,6 +9,7 @@ import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import ReactGA from "react-ga"
+import styled from "styled-components"
 
 import Theme from "./Theme"
 import Header from "../header"
@@ -19,6 +20,14 @@ if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
   require("smooth-scroll")('a[href*="#"]')
 }
+
+const StyledLayout = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+  padding-top: 0;
+  overflow: hidden;
+`
 
 const Layout = ({ children }) => {
   useEffect(() => {
@@ -39,17 +48,10 @@ const Layout = ({ children }) => {
   return (
     <Theme>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          width: `100%`,
-          padding: 0,
-          paddingTop: 0,
-        }}
-      >
+      <StyledLayout>
         <main>{children}</main>
         <Footer />
-      </div>
+      </StyledLayout>
     </Theme>
   )
 }
