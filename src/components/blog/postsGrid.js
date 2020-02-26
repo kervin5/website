@@ -106,7 +106,9 @@ const postsGrid = ({ showFeatured, posts }) => {
                   </p>
                   <Link to={`/blog/${post.slug}`}>
                     <h3 className="Title">{post.title}</h3>
-                    <Tags tags={post.tags} />
+                  </Link>
+                  <Tags tags={post.tags} />
+                  <Link to={`/blog/${post.slug}`}>
                     <p className="Excerpt">
                       {post.plaintext.substring(0, 320)}...
                     </p>

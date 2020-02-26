@@ -28,6 +28,7 @@ const latestPosts = ({ showFeatured }) => {
               tags {
                 id
                 name
+                slug
               }
             }
           }

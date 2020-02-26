@@ -4,6 +4,7 @@ import Tag from "./tag"
 
 const StyledTags = styled.div`
   width: 100%;
+  margin-bottom: 10px;
 `
 
 const Tags = ({ tags }) => {

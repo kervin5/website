@@ -28,6 +28,7 @@ const TagsPage = props => {
           <Row middle="xs" center="xs">
             <Col xs={12}>
               <HTag nomargin>{pageTag}</HTag>
+              <br />
               <AllTags />
             </Col>
           </Row>
