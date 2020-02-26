@@ -31,6 +31,7 @@ const StyledSubscribeForm = styled.div`
 
   h1 {
     color: ${props => props.theme.mainColor} !important;
+    text-align: center;
   }
 
   p {
