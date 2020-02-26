@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const StyledUserMeta = styled.div`
   display: flex;
-  padding: 0 20px 20px;
+  padding: 0 20px;
   margin: 20px auto;
 
   .AuthorPicture {

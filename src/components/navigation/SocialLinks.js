@@ -28,6 +28,7 @@ const SocialLinks = props => {
       <SocialIcon url="https://twitter.com/kervin5" />
       <SocialIcon url="https://github.com/kervin5" />
       <SocialIcon url="https://www.linkedin.com/in/kervin5/" />
+      <SocialIcon url="https://www.instagram.com/kervin.tech/" />
     </StyledSocialLinks>
   )
 }

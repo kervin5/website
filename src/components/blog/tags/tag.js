@@ -35,7 +35,7 @@ const StringToColor = (function() {
           { bg: "#C06C84", font: "white" },
           { bg: "#6C5B7B", font: "white" },
           { bg: "#355C7D", font: "white" },
-          { bg: "#A7226E", font: "black" },
+          { bg: "#A7226E", font: "white" },
           { bg: "#EC2049", font: "white" },
           { bg: "#F26B38", font: "black" },
           { bg: "#F7DB4F", font: "black" },

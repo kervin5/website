@@ -137,9 +137,12 @@ const Post = ({ data }) => {
             </Padding>
           </StyledArticle>
           <Share url={`https://kervin.tech/blog/${post.slug}`} />
-          <SubscribeForm />
+
           <UserMeta post={post} />
-          <hr />
+          <Padding padding="0 20px">
+            <SubscribeForm />
+          </Padding>
+          {/* <hr /> */}
           <div className="Comments">
             <DiscussionEmbed {...disqusConfig} />
           </div>
