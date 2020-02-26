@@ -43,6 +43,7 @@ const StyledSubscribeForm = styled.div`
     border-radius: 25px;
     border: none;
     margin-bottom: 20px;
+    width: 100%;
     &:focus {
       outline: none;
     }
@@ -74,7 +75,7 @@ const SubscribeForm = () => {
     "https://tech.us4.list-manage.com/subscribe/post?u=19f3716c8cf547aef98cc35f6&amp;id=931a3f897e"
   return (
     <StyledSubscribeForm className="SubscribeForm">
-      <Htag>Subscribete</Htag>
+      <Htag>Suscribete</Htag>
       <p>
         Si quieres mantenerte al dia con las ultimas novedades del blog,
         participar en concursos y tener acceso a contenido exclusivo, no olvides
