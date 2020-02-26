@@ -170,6 +170,7 @@ const Post = ({ data }) => {
               "@type": "ImageObject",
               "author": "Kervin Vasquez",
               "contentUrl": "http://kervin.tech/logo.PNG",
+              "url": "http://kervin.tech/logo.PNG",
               "datePublished": "2020-02-26",
               "description": "This is the company logo of Kervin Tech",
               "name": "Kervin Tech Logo"
