@@ -80,7 +80,7 @@ const SubscribeForm = () => {
       <p>
         Si quieres mantenerte al dia con las ultimas novedades del blog,
         participar en concursos y tener acceso a contenido exclusivo, no olvides
-        subscribirte.
+        suscribirte.
       </p>
       <MailchimpSubscribe url={url} />
     </StyledSubscribeForm>
