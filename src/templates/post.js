@@ -13,6 +13,8 @@ import Share from "../components/ui/Share"
 import UserMeta from "../components/blog/userMeta"
 import Tags from "../components/blog/tags/tags"
 import SubscribeForm from "../components/forms/SubscribeForm"
+import PostsBar from "../components/blog/postsBar"
+import Htag from "../components/ui/htag"
 
 const StyledBlogPost = styled.div`
   width: 100%;
@@ -99,9 +101,10 @@ const StyledArticle = styled.article`
 `
 
 const Post = ({ data }) => {
-  const post = data.ghostPost
+  const post = data.singlePost
+  const randomPosts = getRandomItems(data.allOtherPosts.nodes, 3)
   const postUrl = `https://kervin.tech/blog/${post.slug}`
-  console.log(JSON.stringify(post.plaintext))
+
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: { identifier: post.slug, title: post.title },
@@ -149,6 +152,11 @@ const Post = ({ data }) => {
             <DiscussionEmbed {...disqusConfig} />
           </div>
         </StyledBlogPost>
+        <Htag as="h3" margin="0.5rem">
+          Leer más
+        </Htag>
+        <hr />
+        <PostsBar posts={randomPosts} noExcerpt />
       </Container>
       <script
         type="application/ld+json"
@@ -196,11 +204,26 @@ const Post = ({ data }) => {
   )
 }
 
+function getRandomItems(array, quantity) {
+  let indexs = []
+  let elements = []
+
+  while (indexs.length < quantity) {
+    let randomNumber =
+      Math.floor(Math.random() * (array.length - 1 - 0 + 1)) + 0
+    if (!indexs.includes(randomNumber)) {
+      indexs.push(randomNumber)
+      elements.push(array[randomNumber])
+    }
+  }
+  return elements
+}
+
 export default Post
 
 export const postQuery = graphql`
   query($slug: String!) {
-    ghostPost(slug: { eq: $slug }) {
+    singlePost: ghostPost(slug: { eq: $slug }) {
       id
       title
       slug
@@ -224,6 +247,35 @@ export const postQuery = graphql`
         name
         id
         slug
+      }
+    }
+
+    allOtherPosts: allGhostPost(filter: { slug: { ne: $slug } }) {
+      nodes {
+        id
+        title
+        slug
+        feature_image
+        html
+        reading_time
+        published_at(formatString: "MMM DD YYYY")
+        created_at(formatString: "MMM DD YYYY")
+        updated_at(formatString: "MMM DD YYYY")
+        excerpt
+        plaintext
+        primary_author {
+          name
+          profile_image
+          bio
+        }
+        primary_tag {
+          name
+        }
+        tags {
+          name
+          id
+          slug
+        }
       }
     }
   }
