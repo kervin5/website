@@ -27,9 +27,36 @@ const darkTheme = {
 
 function determineTheme() {
   const hours = new Date().getHours()
-  const isDayTime = hours > 6 && hours < 20
-  console.log(isDayTime)
-  return isDayTime ? ["light", lightTheme] : ["dark", darkTheme]
+  const isDayTime = hours > 8 && hours < 20
+  let userTheme = localStorage.getItem("theme")
+  let themeExpiration = localStorage.getItem("themeExpiration")
+  let expired = true
+  if (userTheme && themeExpiration) {
+    const today = new Date()
+    const expiration = new Date(themeExpiration)
+    if (today.getTime() <= expiration.getTime()) {
+      expired = false
+    } else {
+      localStorage.removeItem("themeExpiration")
+      localStorage.removeItem("theme")
+      expired = true
+    }
+  }
+  return userTheme && !expired
+    ? getTheme(userTheme)
+    : isDayTime
+    ? getTheme("light")
+    : getTheme("dark")
+}
+
+function getTheme(name) {
+  return name === "light" ? [name, lightTheme] : [name, darkTheme]
+}
+
+function addDays(days) {
+  var result = new Date()
+  result.setDate(result.getDate() + days)
+  return result
 }
 
 const CustomThemeProvider = props => {
@@ -41,10 +68,14 @@ const CustomThemeProvider = props => {
     if (currentTheme === "light") {
       setTheme(darkTheme)
       setCurrentTheme("dark")
+      localStorage.setItem("theme", "dark")
     } else {
       setTheme(lightTheme)
       setCurrentTheme("light")
+      localStorage.setItem("theme", "light")
     }
+
+    localStorage.setItem("themeExpiration", addDays(2))
   }
 
   return (
