@@ -75,7 +75,7 @@ const CustomThemeProvider = props => {
       localStorage.setItem("theme", "light")
     }
 
-    localStorage.setItem("themeExpiration", addDays(2))
+    localStorage.setItem("themeExpiration", addDays(1))
   }
 
   return (
