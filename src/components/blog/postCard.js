@@ -20,6 +20,7 @@ const StyledCard = styled.div`
     transform: scale(1.01);
   }
 
+  
   .Content {
     padding: 20px 20px 5px;
 
@@ -38,6 +39,10 @@ const StyledCard = styled.div`
     .Excerpt {
       font-size: 0.8em;
       margin-bottom: 5px;
+      /* color: ${props =>
+        props.theme.name === "light"
+          ? props.theme.darkColor
+          : props.theme.mainColor}; */
     }
 
     a {

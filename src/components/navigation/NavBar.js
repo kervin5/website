@@ -7,6 +7,7 @@ import { Grid, Row, Col } from "react-flexbox-grid"
 import NavBarLogo from "./NavBarLogo"
 import Menu from "./Menu"
 import useScrollHandler from "../../lib/scroll"
+import ThemeToggle from "../ui/themeToggle"
 
 const StyledNavBar = styled.nav`
   position: fixed;
@@ -14,12 +15,18 @@ const StyledNavBar = styled.nav`
   left: 0;
   right: 0;
   background-color: ${props =>
-    props.scroll ? "rgba(255,255,255,0)" : "rgba(255,255,255,1)"};
+    props.scroll ? "rgba(255,255,255,0)" : props.theme.lightColor};
   box-shadow: ${props =>
     props.scroll ? "none" : "-1px 2px 5px -3px rgba(0,0,0,0.52)"};
   z-index: 999;
   padding: 10px;
   transition: 300ms;
+
+  .ActionButtons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
 `
 
 const NavBar = () => {
@@ -32,7 +39,8 @@ const NavBar = () => {
           <Col xs={6}>
             <NavBarLogo />
           </Col>
-          <Col xs={6}>
+          <Col xs={6} className="ActionButtons">
+            <ThemeToggle />
             <Menu />
           </Col>
         </Row>

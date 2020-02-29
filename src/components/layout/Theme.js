@@ -1,17 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
 import { ThemeProvider } from "styled-components"
-
-const theme = {
-  mainColor: "#ffcc00",
-  secondaryColor: "#F45A2C",
-  accentColor: "#07538C",
-  accentColor2: "#00AAB5",
-  darkColor: "black",
-  lightColor: "white",
-  containerWidth: "1130px",
-}
+import { ThemeContext } from "../../context/ThemeContext"
 
 const Theme = props => {
+  // const [theme, setTheme] = useState(lightTheme);
+  const [theme] = useContext(ThemeContext)
+  // let theme = {};
+
   return <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
 }
 

@@ -12,6 +12,7 @@ import ReactGA from "react-ga"
 import styled from "styled-components"
 
 import Theme from "./Theme"
+import { CustomThemeProvider } from "../../context/ThemeContext"
 import Header from "../header"
 import Footer from "./Footer"
 import "./layout.css"
@@ -27,6 +28,15 @@ const StyledLayout = styled.div`
   padding: 0;
   padding-top: 0;
   overflow: hidden;
+  background-color: ${props => props.theme.lightColor};
+  color: ${props => props.theme.darkColor};
+
+  a{
+    /* color: ${props => props.theme.secondaryColor}; */
+    &:visited {
+    color: ${props => props.theme.mainColor};
+    }
+  }
 `
 
 const Layout = ({ children }) => {
@@ -46,13 +56,15 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <Theme>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <StyledLayout>
-        <main>{children}</main>
-        <Footer />
-      </StyledLayout>
-    </Theme>
+    <CustomThemeProvider>
+      <Theme>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <StyledLayout>
+          <main>{children}</main>
+          <Footer />
+        </StyledLayout>
+      </Theme>
+    </CustomThemeProvider>
   )
 }
 
