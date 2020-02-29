@@ -32,7 +32,7 @@ function determineTheme() {
   let themeExpiration = null
   let expired = true
 
-  if (localStorage !== "undefined") {
+  if (typeof window !== "undefined") {
     userTheme = localStorage.getItem("theme")
     themeExpiration = localStorage.getItem("themeExpiration")
   }
