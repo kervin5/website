@@ -5,7 +5,10 @@ import PostMeta from "./postMeta"
 import Tags from "./tags/tags"
 
 const StyledCard = styled.div`
-  background-color: ${props => props.theme.lightColor};
+  background-color: ${props =>
+    props.theme.name === "light"
+      ? props.theme.lightColor
+      : props.theme.mutedColor};
   margin-bottom: 20px;
   border-radius: 10px;
   overflow: hidden;

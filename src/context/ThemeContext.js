@@ -21,6 +21,7 @@ const darkTheme = {
   accentColor2: "#00AAB5",
   darkColor: "#ebf7fc",
   lightColor: "#25283D",
+  mutedColor: "#2a2e4d",
   containerWidth: "1130px",
 }
 
