@@ -28,9 +28,14 @@ const darkTheme = {
 function determineTheme() {
   const hours = new Date().getHours()
   const isDayTime = hours > 8 && hours < 20
-  let userTheme = localStorage.getItem("theme")
-  let themeExpiration = localStorage.getItem("themeExpiration")
+  let userTheme = null
+  let themeExpiration = null
   let expired = true
+
+  if (localStorage !== "undefined") {
+    userTheme = localStorage.getItem("theme")
+    themeExpiration = localStorage.getItem("themeExpiration")
+  }
   if (userTheme && themeExpiration) {
     const today = new Date()
     const expiration = new Date(themeExpiration)
