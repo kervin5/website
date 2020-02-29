@@ -156,7 +156,7 @@ const Post = ({ data }) => {
           Leer más
         </Htag>
         <hr />
-        <PostsBar posts={randomPosts} noExcerpt />
+        <PostsBar posts={randomPosts} noExcerpt smallFont />
       </Container>
       <script
         type="application/ld+json"

@@ -1,8 +1,8 @@
 import React from "react"
-import { theme } from "../layout/Theme"
+import { withTheme } from "styled-components"
 import PropTypes from "prop-types"
 
-const HTag = ({ as, children, weight, margin, nomargin, color, id }) => {
+const HTag = ({ as, children, weight, margin, nomargin, color, id, theme }) => {
   const TagToRender = as
   const otherProps = id ? { id } : {}
 
@@ -31,4 +31,4 @@ HTag.propTypes = {
   as: PropTypes.string,
 }
 
-export default HTag
+export default withTheme(HTag)

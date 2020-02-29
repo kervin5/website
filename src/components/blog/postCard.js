@@ -31,7 +31,7 @@ const StyledCard = styled.div`
     }
 
     .Title {
-      font-size: ${props => (props.smallFont ? "1.2em" : "0.8em")};
+      font-size: ${props => (props.smallFont ? "0.8em" : "1.2em")};
       margin-bottom: 10px;
     }
 
@@ -57,9 +57,9 @@ const StyledCard = styled.div`
   }
 `
 
-const PostCard = ({ post, noImage, tags, noExcerpt, noAuthor }) => {
+const PostCard = ({ post, noImage, tags, noExcerpt, smallFont }) => {
   return (
-    <StyledCard>
+    <StyledCard smallFont={smallFont}>
       {!noImage && <img src={post.feature_image} alt={post.title} />}
       <div className="Content">
         <p className="PrimaryTag">
