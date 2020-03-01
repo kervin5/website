@@ -29,7 +29,10 @@ const StyledCard = styled.div`
 
     .PrimaryTag {
       text-transform: uppercase;
-      color: ${props => props.theme.accentColor};
+      color: ${props =>
+        props.theme.name === "light"
+          ? props.theme.accentColor
+          : props.theme.mainColor};
       font-size: 0.8em;
       margin-bottom: 0;
     }

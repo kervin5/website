@@ -15,6 +15,12 @@ const StyledButton = styled.span`
       transform: scale(1.02);
     }
   }
+
+  a {
+    &:visited {
+      color: ${props => props.theme.lightColor};
+    }
+  }
 `
 
 const Button = ({ as, children, href }) => {
