@@ -107,7 +107,7 @@ const Post = ({ data }) => {
 
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
-    config: { identifier: post.slug, title: post.title },
+    config: { identifier: post.id, title: post.title },
   }
   useEffect(() => {
     // call the highlightAll() function to style our code blocks

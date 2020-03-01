@@ -34,7 +34,7 @@ const BlogPage = ({ data }) => {
           </Row>
         </Grid>
       </PageSection>
-      <PageSection splat="left" id="aboutMe">
+      <PageSection splat="left" id="allPosts">
         <Grid>
           <Row middle="xs" center="xs">
             <Col xs={12}>
