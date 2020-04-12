@@ -73,7 +73,7 @@ const StyledShape = styled.div`
   left: ${props => props.position.x}%;
   transform: scale(0.5);
   animation: ${props => (props.rotateShape ? rotate : resize)} 5s linear 2s
-    infinite alternate;
+    infinite;
   animation-delay: ${props => props.delay}ms;
 `
 
