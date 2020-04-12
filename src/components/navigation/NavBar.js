@@ -36,10 +36,10 @@ const NavBar = () => {
     <StyledNavBar scroll={scroll}>
       <Grid>
         <Row middle="xs" between="xs">
-          <Col xs={6}>
+          <Col xs={5}>
             <NavBarLogo />
           </Col>
-          <Col xs={6} className="ActionButtons">
+          <Col xs={7} className="ActionButtons">
             <ThemeToggle />
             <Menu />
           </Col>

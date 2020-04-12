@@ -14,7 +14,7 @@ const StyledShapes = styled.div`
 const Shapes = () => {
   return (
     <StyledShapes className="Shapes">
-      {[...Array(18).keys()].map(index => {
+      {[...Array(45).keys()].map(index => {
         const position = { x: randomNumber(1, 100), y: randomNumber(1, 100) }
         return (
           <Shape

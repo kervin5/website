@@ -4,20 +4,12 @@ import randomNumber from "../../lib/randomNumber"
 
 const resize = () => {
   return keyframes`
-        0%{
-            transform: scale(1);
-        }
-
-        20%{
+        from{
             transform: scale(0.5);
-        }
-
-        60%{
-            transform: scale(0.8);
         }
         
         100% {
-            transform: scale(1.1);
+            transform: scale(0.3);
         }
     `
 }
@@ -25,13 +17,12 @@ const resize = () => {
 const rotate = () => {
   return keyframes`
           0%{
-              transform: rotate(0deg);
+              transform: rotate(0deg) scale(0.5);
           }
   
           
-          
           100% {
-              transform: rotate(360deg);
+              transform: rotate(360deg) scale(0.3);
           }
       `
 }
@@ -40,8 +31,9 @@ const StyledShape = styled.div`
   position: absolute;
   top: ${props => props.position.y}%;
   left: ${props => props.position.x}%;
+  transform: scale(0.5);
   animation: ${props => (props.rotateShape ? rotate : resize)} 5s linear 2s
-    infinite ${props => (props.rotateShape ? "" : "alternate")};
+    infinite alternate;
   animation-delay: ${props => props.delay}ms;
 `
 
