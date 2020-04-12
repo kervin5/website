@@ -1,6 +1,35 @@
-import React, { Suspense } from "react"
+import React from "react"
 import styled, { keyframes } from "styled-components"
 import randomNumber from "../../lib/randomNumber"
+
+import Shape1 from "../../images/shapes/Shape1.svg"
+import Shape2 from "../../images/shapes/Shape2.svg"
+import Shape3 from "../../images/shapes/Shape3.svg"
+import Shape4 from "../../images/shapes/Shape4.svg"
+import Shape5 from "../../images/shapes/Shape5.svg"
+import Shape6 from "../../images/shapes/Shape6.svg"
+import Shape7 from "../../images/shapes/Shape7.svg"
+import Shape8 from "../../images/shapes/Shape8.svg"
+import Shape9 from "../../images/shapes/Shape9.svg"
+import Shape10 from "../../images/shapes/Shape10.svg"
+import Shape11 from "../../images/shapes/Shape11.svg"
+import Shape12 from "../../images/shapes/Shape12.svg"
+
+const allShapes = [
+  Shape1,
+  Shape2,
+  Shape3,
+  Shape4,
+  Shape5,
+  Shape5,
+  Shape6,
+  Shape7,
+  Shape8,
+  Shape9,
+  Shape10,
+  Shape11,
+  Shape12,
+]
 
 const resize = () => {
   return keyframes`
@@ -49,11 +78,7 @@ const StyledShape = styled.div`
 `
 
 const Shape = ({ position }) => {
-  const SVGShape = React.lazy(() =>
-    import(`../../images/shapes/Shape${randomNumber(1, 12)}.svg`)
-  )
-
-  console.log(position.x * position.y)
+  const ElementToRender = allShapes[randomNumber(1, 12) - 1]
   return (
     <StyledShape
       className="Shape"
@@ -61,9 +86,7 @@ const Shape = ({ position }) => {
       delay={position.x * position.y}
       rotateShape={Math.random() >= 0.5}
     >
-      <Suspense fallback={<span></span>}>
-        <SVGShape />
-      </Suspense>
+      <ElementToRender />
     </StyledShape>
   )
 }
