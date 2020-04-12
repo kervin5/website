@@ -4,27 +4,38 @@ import randomNumber from "../../lib/randomNumber"
 
 const resize = () => {
   return keyframes`
-        from{
-            transform: scale(0.5);
-        }
-        
-        100% {
-            transform: scale(0.3);
-        }
-    `
+          0%{
+              transform: scale(0.5);
+          }
+  
+          25%{
+              transform: scale(0.3);
+          }
+  
+          75%{
+              transform: scale(0.6);
+          }
+          
+          100% {
+              transform: scale(0.5);
+          }
+      `
 }
 
 const rotate = () => {
   return keyframes`
-          0%{
-              transform: rotate(0deg) scale(0.5);
-          }
-  
-          
-          100% {
-              transform: rotate(360deg) scale(0.3);
-          }
-      `
+            0%{
+                transform: rotate(0deg) scale(0.5);
+            }
+    
+            50% {
+                transform: rotate(180deg) scale(0.3);
+            }
+            
+            100% {
+                transform: rotate(360deg) scale(0.5);
+            }
+        `
 }
 
 const StyledShape = styled.div`
