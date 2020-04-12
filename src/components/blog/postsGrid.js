@@ -10,15 +10,15 @@ const postsGrid = ({ showFeatured, posts }) => {
   return (
     <>
       <Grid>
-        <Row middle="xs" center="xs">
+        <Row center="xs">
           {topFourPosts.map((post, index) =>
             showFeatured && index === 0 ? (
-              <Col key={"Post" + index} md={12}>
+              <Col key={"Post" + index} md={12} style={{ display: "flex" }}>
                 <WidePostCard post={post} />
                 <br />
               </Col>
             ) : (
-              <Col key={"Post" + index} md={4}>
+              <Col key={"Post" + index} md={4} style={{ display: "flex" }}>
                 <PostCard post={post} />
               </Col>
             )
@@ -28,7 +28,7 @@ const postsGrid = ({ showFeatured, posts }) => {
       <Grid>
         <Row middle="xs" center="xs">
           {restOfThePosts.map((post, index) => (
-            <Col key={"Post" + index} md={12}>
+            <Col key={"Post" + index} md={12} style={{ display: "flex" }}>
               <PostCard post={post} noImage tags />
             </Col>
           ))}

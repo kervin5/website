@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 // import Splat from "../svg/splat"
 import MorphingSplat from "../svg/morphing-splat"
+import Shapes from "../svg/shapes"
 
 const StyledPageSection = styled.div`
   background-color: ${props =>
@@ -26,6 +27,8 @@ const PageSection = ({ splat, color, children, id }) => {
       color={color}
       {...(id ? { id } : {})}
     >
+      {" "}
+      <Shapes />
       {splat && (
         <MorphingSplat position={typeof splat === "string" ? splat : "right"} />
         // <Splat position={typeof splat === "string" ? splat : "right"} />
