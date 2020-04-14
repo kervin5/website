@@ -2,7 +2,7 @@ import React, { memo, useState, useEffect } from "react"
 import styled from "styled-components"
 import Shape from "./shape"
 import randomNumber from "../../lib/randomNumber"
-import useWindowWidth from "../../hooks/useWindowWidth"
+// import useWindowWidth from "../../hooks/useWindowWidth"
 
 const StyledShapes = styled.div`
   position: absolute;
@@ -13,17 +13,17 @@ const StyledShapes = styled.div`
 `
 
 const Shapes = () => {
-  const width = useWindowWidth()
-  const [numberOfshapes, setNumberOfShapes] = useState(0)
+  // const width = useWindowWidth()
+  const [numberOfshapes, setNumberOfShapes] = useState(45)
   const [shapesToRender, setShapesToRender] = useState(null)
 
-  useEffect(() => {
-    if (width > 920) {
-      setNumberOfShapes(45)
-    } else {
-      setNumberOfShapes(20)
-    }
-  }, [width])
+  // useEffect(() => {
+  //   if (width > 920) {
+  //     setNumberOfShapes(45)
+  //   } else {
+  //     setNumberOfShapes(20)
+  //   }
+  // }, [width])
 
   useEffect(() => {
     setShapesToRender(
