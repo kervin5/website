@@ -1,4 +1,4 @@
-import React from "react"
+import React, { memo } from "react"
 import styled, { keyframes } from "styled-components"
 import randomNumber from "../../lib/randomNumber"
 
@@ -67,14 +67,17 @@ const rotate = () => {
         `
 }
 
-const StyledShape = styled.div`
+const StyledShape = styled.div.attrs(props => ({
+  style: {
+    top: props.position.y + "%",
+    left: props.position.x + "%",
+  },
+}))`
   position: absolute;
-  top: ${props => props.position.y}%;
-  left: ${props => props.position.x}%;
-  transform: scale(0.5);
   animation: ${props => (props.rotateShape ? rotate : resize)} 5s linear 2s
     infinite;
   animation-delay: ${props => props.delay}ms;
+  transform: scale(0.5);
 `
 
 const Shape = ({ position }) => {
@@ -91,4 +94,10 @@ const Shape = ({ position }) => {
   )
 }
 
-export default Shape
+export default memo(Shape, (prevProps, nextProps) => {
+  return true
+  return (
+    prevProps.position.x === nextProps.position.x &&
+    prevProps.position.y === nextProps.position.y
+  )
+})

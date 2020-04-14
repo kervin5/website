@@ -1,7 +1,8 @@
-import React from "react"
+import React, { memo, useState, useEffect } from "react"
 import styled from "styled-components"
 import Shape from "./shape"
 import randomNumber from "../../lib/randomNumber"
+import useWindowWidth from "../../hooks/useWindowWidth"
 
 const StyledShapes = styled.div`
   position: absolute;
@@ -12,9 +13,21 @@ const StyledShapes = styled.div`
 `
 
 const Shapes = () => {
-  return (
-    <StyledShapes className="Shapes">
-      {[...Array(45).keys()].map(index => {
+  const width = useWindowWidth()
+  const [numberOfshapes, setNumberOfShapes] = useState(0)
+  const [shapesToRender, setShapesToRender] = useState(null)
+
+  useEffect(() => {
+    if (width > 920) {
+      setNumberOfShapes(45)
+    } else {
+      setNumberOfShapes(20)
+    }
+  }, [width])
+
+  useEffect(() => {
+    setShapesToRender(
+      [...Array(numberOfshapes).keys()].map(index => {
         const position = { x: randomNumber(1, 100), y: randomNumber(1, 100) }
         return (
           <Shape
@@ -22,9 +35,11 @@ const Shapes = () => {
             position={position}
           />
         )
-      })}
-    </StyledShapes>
-  )
+      })
+    )
+  }, [numberOfshapes])
+
+  return <StyledShapes className="Shapes">{shapesToRender}</StyledShapes>
 }
 
-export default Shapes
+export default memo(Shapes)
