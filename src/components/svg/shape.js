@@ -78,9 +78,11 @@ const StyledShape = styled.div.attrs(props => ({
     infinite;
   animation-delay: ${props => props.delay}ms;
   transform: scale(0.5);
+  transition: 300ms;
+  opacity: 1;
   @media (max-width: 920px) {
     &:nth-child(odd) {
-      display: none;
+      opacity: 0;
     }
   }
 `
