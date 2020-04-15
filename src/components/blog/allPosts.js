@@ -7,7 +7,8 @@ const latestPosts = ({ showFeatured }) => {
     <StaticQuery
       query={graphql`
         query latestPostsQuery {
-          allGhostPost(limit: 10) {
+          # allGhostPost(limit: 10) { //TODO: Implement pagination
+          allGhostPost {
             nodes {
               title
               id
