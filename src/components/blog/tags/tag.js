@@ -22,7 +22,6 @@ const StringToColor = (function() {
 
   return {
     next: function stringToColor(str) {
-      console.log(str)
       if (instance === null) {
         instance = {}
         instance.stringToColorHash = {}
@@ -66,7 +65,6 @@ const StringToColor = (function() {
 })()
 
 const Tag = ({ children, slug }) => {
-  console.log({ children })
   return (
     <Link to={`/blog/tag/${slug}`}>
       <StyledTag className="BlogTag" color={StringToColor.next(children)}>
