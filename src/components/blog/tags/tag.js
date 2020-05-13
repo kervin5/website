@@ -49,9 +49,16 @@ const StringToColor = (function() {
         ]
       }
 
-      if (!instance.stringToColorHash[str])
+      if (!instance.stringToColorHash[str]) {
+        if (
+          instance.nextVeryDifferntColorIdx ===
+          instance.veryDifferentColors.length - 1
+        ) {
+          instance.nextVeryDifferntColorIdx = 0
+        }
         instance.stringToColorHash[str] =
           instance.veryDifferentColors[instance.nextVeryDifferntColorIdx++]
+      }
 
       return instance.stringToColorHash[str]
     },
