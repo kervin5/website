@@ -59,9 +59,10 @@ const StringToColor = (function() {
 })()
 
 const Tag = ({ children, slug }) => {
+  console.log({ children })
   return (
     <Link to={`/blog/tag/${slug}`}>
-      <StyledTag className="BlogTag" color={StringToColor.next("Whatsup")}>
+      <StyledTag className="BlogTag" color={StringToColor.next(children)}>
         {children}
       </StyledTag>
     </Link>
