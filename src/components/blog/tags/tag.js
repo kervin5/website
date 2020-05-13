@@ -22,6 +22,7 @@ const StringToColor = (function() {
 
   return {
     next: function stringToColor(str) {
+      console.log(str)
       if (instance === null) {
         instance = {}
         instance.stringToColorHash = {}
