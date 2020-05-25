@@ -50,6 +50,10 @@ module.exports = {
             family: `Poppins`,
             variants: [`300`, `400`, `700`],
           },
+          {
+            family: `Fira Mono`,
+            variants: [`400`],
+          },
         ],
       },
     },

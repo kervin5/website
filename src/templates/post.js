@@ -37,6 +37,13 @@ const StyledArticle = styled.article`
     font-weight: bold;
   }
 
+  code[class*="language-"],
+  pre[class*="language-"] {
+    * {
+      font-family: "Fira Mono", "Courier New", Courier, monospace !important;
+    }
+  }
+
   .kg-image-card {
     img {
       width: 100%;

@@ -16,21 +16,21 @@ import {
 const shareObjects = {
   Facebook: {
     color: "#3b5998",
-    button: FacebookShareButton,
-    icon: FacebookIcon,
+    Button: FacebookShareButton,
+    Icon: FacebookIcon,
   },
   LinkedIn: {
     color: "#0e76a8",
-    button: LinkedinShareButton,
-    icon: LinkedinIcon,
+    Button: LinkedinShareButton,
+    Icon: LinkedinIcon,
   },
-  Twitter: { color: "#1da1f2", button: TwitterShareButton, icon: TwitterIcon },
+  Twitter: { color: "#1da1f2", Button: TwitterShareButton, Icon: TwitterIcon },
   Whatsapp: {
     color: "#25D366",
-    button: WhatsappShareButton,
-    icon: WhatsappIcon,
+    Button: WhatsappShareButton,
+    Icon: WhatsappIcon,
   },
-  Reddit: { color: "#FF5700", button: RedditShareButton, icon: RedditIcon },
+  Reddit: { color: "#FF5700", Button: RedditShareButton, Icon: RedditIcon },
 }
 
 const StyledShareButtons = styled.div`
@@ -79,13 +79,13 @@ const Share = ({ url }) => {
               key={ShareServiceName + index}
               mainColor={ShareService.color}
             >
-              <ShareService.button url={url}>
-                <ShareService.icon
+              <ShareService.Button url={url}>
+                <ShareService.Icon
                   size={40}
                   iconBgStyle={{ fill: ShareService.color }}
                 />
                 <span className="Label">{ShareServiceName}</span>
-              </ShareService.button>
+              </ShareService.Button>
             </StyledShareButton>
           )
         }
