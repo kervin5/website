@@ -18,7 +18,7 @@ import ContactInfo from "../components/ui/ContactInfo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" image="seo.PNG" />
-    <PageSection splat id="home">
+    <PageSection id="home">
       <Grid>
         <Row middle="xs" center="xs">
           <Col xs={12} md={6}>
@@ -37,7 +37,7 @@ const IndexPage = () => (
         </Row>
       </Grid>
     </PageSection>
-    <PageSection splat="left" id="aboutMe">
+    <PageSection id="aboutMe" color="mainColor">
       <Grid>
         <Row middle="xs">
           <Col xs={12} md={6}>
@@ -73,7 +73,7 @@ const IndexPage = () => (
         </Row>
       </Grid>
     </PageSection>
-    <PageSection splat id="services">
+    <PageSection id="services">
       <Grid>
         <Row middle="xs">
           <Col xs={12} md={6}>
@@ -99,7 +99,7 @@ const IndexPage = () => (
         </Row>
       </Grid>
     </PageSection>
-    <PageSection splat="left" id="projects">
+    <PageSection id="projects" color="mainColor">
       <Grid>
         <Row middle="xs">
           <Col xs={12} md={6}>
@@ -160,7 +160,7 @@ const IndexPage = () => (
         </Row>
       </Grid>
     </PageSection>
-    <PageSection splat="left" id="contact">
+    <PageSection id="contact" color="mainColor">
       <ContactInfo />
     </PageSection>
   </Layout>

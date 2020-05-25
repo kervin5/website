@@ -1,19 +1,17 @@
 import React from "react"
 import styled from "styled-components"
-// import Splat from "../svg/splat"
-import MorphingSplat from "../svg/morphing-splat"
-import Shapes from "../svg/shapes"
+import useScrollDetector from "scroll-detect-hook"
 
 const StyledPageSection = styled.div`
   background-color: ${props =>
-    props.color ? props.theme[props.color] : props.theme.clearColor};
+    props.color ? props.theme[props.color] : props.themežclearColor};
   min-height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-
+  transition: 100ms;
   .Content {
     position: relative;
     width: 100%;
@@ -21,18 +19,18 @@ const StyledPageSection = styled.div`
 `
 
 const PageSection = ({ splat, color, children, id }) => {
+  const [isScrolling, direction, speed] = useScrollDetector()
   return (
     <StyledPageSection
-      className={`PageSection`}
       color={color}
+      className={`PageSection`}
       {...(id ? { id } : {})}
+      style={{
+        transform: `skewY(${
+          isScrolling && direction === "up" ? "" : "-"
+        }${speed / 15}deg)`,
+      }}
     >
-      {" "}
-      <Shapes />
-      {splat && (
-        <MorphingSplat position={typeof splat === "string" ? splat : "right"} />
-        // <Splat position={typeof splat === "string" ? splat : "right"} />
-      )}
       <div className="Content">{children}</div>
     </StyledPageSection>
   )

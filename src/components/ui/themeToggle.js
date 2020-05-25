@@ -22,7 +22,8 @@ const StyledButton = styled.button`
 `
 
 const ThemeToggle = ({ children }) => {
-  const [theme, toggleTheme, current] = useContext(ThemeContext)
+  //First unusued argument is theme
+  const [, toggleTheme, current] = useContext(ThemeContext)
 
   const handleClick = () => {
     toggleTheme()

@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import SplatSVG from "../../images/splat.svg"
 import SocialLinks from "./SocialLinks"
 import { Grid, Row, Col } from "react-flexbox-grid"
 import { Link } from "gatsby"
@@ -11,23 +10,21 @@ const StyledMobileMenuOptions = styled.div`
   left: 0;
   bottom: ${props => (props.open ? "0" : "100vh")};
   right: 0;
+  transition: 300ms;
 
-  .SplatSVG {
-    transform: ${props => (props.open ? "scale(3)" : "scale(0)")};
-    transition: 400ms;
-    animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
 
-    path {
-      fill: ${props =>
-        props.color ? props.theme[props.color] : props.theme.secondaryColor};
-    }
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: ${props => props.theme.secondaryColor};
   }
 
   @media (max-width: 845px) {
-    .SplatSVG {
-      transform: ${props => (props.open ? "scale(10)" : "scale(0)")};
-      transition: 300ms;
-    }
   }
 
   .container {
@@ -59,8 +56,6 @@ const StyledMobileMenuOptions = styled.div`
 const MobileMenuOptions = ({ items, open, onClick }) => {
   return (
     <StyledMobileMenuOptions open={open} onClick={onClick}>
-      <SplatSVG className="SplatSVG" />
-
       <Grid>
         <Row middle="xs" center="xs">
           {items.map((option, index) => {
