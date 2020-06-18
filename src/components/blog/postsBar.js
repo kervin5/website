@@ -8,7 +8,7 @@ const randomPostsBar = ({ posts, noExcerpt, smallFont }) => {
     <Grid>
       <Row center="xs">
         {posts.map((post, index) => (
-          <Col key={"Post" + index} md={4} style={{ display: "flex" }}>
+          <Col key={"PostBar" + index} md={4} style={{ display: "flex" }}>
             <PostCard
               post={post}
               noExcerpt={noExcerpt}

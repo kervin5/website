@@ -6,11 +6,13 @@ exports.onRenderBody = ({
 }) => {
   setPostBodyComponents([
     <script
-      key="3"
+      key="3safaslkj"
       type="text/javascript"
       src="https://account.snatchbot.me/script.js"
     />,
     <script
+      key="3safaslkfffj"
+      type="text/javascript"
       dangerouslySetInnerHTML={{
         __html: `
 

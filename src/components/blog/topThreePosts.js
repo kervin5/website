@@ -28,11 +28,15 @@ const topThreePosts = () => {
           }
         }
       `}
-      render={data => (
+      render={(data) => (
         <Grid>
           <Row center="xs">
             {data.allGhostPost.nodes.map((post, index) => (
-              <Col key={"Post" + index} md={4} style={{ display: "flex" }}>
+              <Col
+                key={"PosttopThree" + index}
+                md={4}
+                style={{ display: "flex" }}
+              >
                 <PostCard post={post} />
               </Col>
             ))}
