@@ -7,16 +7,16 @@ import { Grid, Row, Col } from "react-flexbox-grid"
 import NavBarLogo from "./NavBarLogo"
 import Menu from "./Menu"
 import useScrollHandler from "../../lib/scroll"
-import ThemeToggle from "../ui/themeToggle"
+import ThemeToggle from "../ui/ThemeToggle"
 
 const StyledNavBar = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.scroll ? "rgba(255,255,255,0)" : props.theme.lightColor};
-  box-shadow: ${props =>
+  box-shadow: ${(props) =>
     props.scroll ? "none" : "-1px 2px 5px -3px rgba(0,0,0,0.52)"};
   z-index: 999;
   padding: 10px;
