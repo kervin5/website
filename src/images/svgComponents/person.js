@@ -1,5 +1,5 @@
 import React from "react"
-import PersonIllustration from "../../images/envelope.svg"
+import PersonIllustration from "../assets/person.svg"
 import styled from "styled-components"
 
 const StyledDiv = styled.div`

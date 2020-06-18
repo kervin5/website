@@ -1,7 +1,7 @@
 import React from "react"
 import { MorphReplace } from "react-svg-morph"
-import SunSVG from "../../images/sun.svg"
-import MoonSVG from "../../images/moon.svg"
+import SunSVG from "../assets/sun.svg"
+import MoonSVG from "../assets/moon.svg"
 
 const SVG = ({ light }) => {
   return (

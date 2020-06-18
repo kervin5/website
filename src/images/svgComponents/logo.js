@@ -1,8 +1,8 @@
 import React from "react"
-import MyLogo from "../../images/logo.svg"
+import MyLogo from "../assets/logo.svg"
 import styled, { keyframes } from "styled-components"
 
-const colorize = props => {
+const colorize = (props) => {
   return keyframes`
   from {
     fill: black;

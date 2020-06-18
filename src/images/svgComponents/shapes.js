@@ -27,7 +27,7 @@ const Shapes = () => {
 
   useEffect(() => {
     setShapesToRender(
-      [...Array(numberOfshapes).keys()].map(index => {
+      [...Array(numberOfshapes).keys()].map((index) => {
         const position = { x: randomNumber(1, 100), y: randomNumber(1, 100) }
         return (
           <Shape

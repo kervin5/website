@@ -67,16 +67,16 @@ const rotate = () => {
         `
 }
 
-const StyledShape = styled.div.attrs(props => ({
+const StyledShape = styled.div.attrs((props) => ({
   style: {
     top: props.position.y + "%",
     left: props.position.x + "%",
   },
 }))`
   position: absolute;
-  animation: ${props => (props.rotateShape ? rotate : resize)} 5s linear
+  animation: ${(props) => (props.rotateShape ? rotate : resize)} 5s linear
     infinite;
-  animation-delay: ${props => props.delay}ms;
+  animation-delay: ${(props) => props.delay}ms;
   transform: scale(0.5);
   transition: 300ms;
   opacity: 1;

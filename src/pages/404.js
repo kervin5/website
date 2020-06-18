@@ -8,7 +8,7 @@ import PageSection from "../components/layout/PageSection"
 import Padding from "../components/layout/Padding"
 import HTag from "../components/ui/htag"
 import Highlight from "../components/ui/Highlight"
-import Envelope from "../components/svg/envelope"
+import Envelope from "../images/svgComponents/envelope"
 import Button from "../components/ui/Button"
 
 const BlogPage = () => {

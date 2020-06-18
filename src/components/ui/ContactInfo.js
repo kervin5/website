@@ -2,7 +2,7 @@ import React from "react"
 import { Grid, Row, Col } from "react-flexbox-grid"
 import Padding from "../layout/Padding"
 import HTag from "../ui/htag"
-import Envelope from "../svg/envelope"
+import Envelope from "../../images/svgComponents/envelope"
 import Highlight from "../ui/Highlight"
 import SocialLinks from "../navigation/SocialLinks"
 

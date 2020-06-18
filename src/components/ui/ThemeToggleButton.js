@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
 import { ThemeContext } from "../../context/ThemeContext"
-import SoonMoonSVG from "../svg/sun-moon"
+import SoonMoonSVG from "../../images/svgComponents/sun-moon"
 
 const StyledButton = styled.button`
   background-color: Transparent;
@@ -13,7 +13,7 @@ const StyledButton = styled.button`
   z-index: 100;
 
   path {
-    fill: ${props => props.theme.darkColor};
+    fill: ${(props) => props.theme.darkColor};
   }
 
   &:focus {
