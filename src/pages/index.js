@@ -14,28 +14,30 @@ import PersonIllustration from "../images/svgComponents/person"
 import SocialLinks from "../components/navigation/SocialLinks"
 import TopThreePosts from "../components/blog/topThreePosts"
 import ContactInfo from "../components/ui/ContactInfo"
+import HeroTitle from "../components/layout/HeroTitle"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" image="seo.PNG" />
     <PageSection id="home">
-      <Grid>
+      {/* <Grid>
         <Row middle="xs" center="xs">
           <Col xs={12} md={6}>
             <Logo />
           </Col>
-          <Col xs={12} md={6}>
-            <HTag nomargin>
+          <Col xs={12} md={6}> */}
+      <HeroTitle />
+      {/* <HTag nomargin>
               Kervin <Highlight>Vasquez</Highlight>
             </HTag>
 
             <HTag as="h2" weight="300">
               Full-Stack Developer
               <SocialLinks />
-            </HTag>
-          </Col>
+            </HTag> */}
+      {/* </Col>
         </Row>
-      </Grid>
+      </Grid> */}
     </PageSection>
     <PageSection id="aboutMe" color="mainColor">
       <Grid>

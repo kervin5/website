@@ -23,6 +23,7 @@
     "gatsby-source-filesystem": "^2.3.11",
     "gatsby-source-ghost": "^4.0.5",
     "gatsby-transformer-sharp": "^2.5.5",
+    "gsap": "^3.4.0",
     "jimp": "^0.13.0",
     "prismjs": "^1.20.0",
     "prop-types": "^15.7.2",
