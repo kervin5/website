@@ -6,19 +6,19 @@ const StyledNavBarLogo = styled.span`
   font-weight: bold;
   a {
     text-decoration: none;
-    color: ${props => props.theme.darkColor};
+    color: ${(props) => props.theme.darkColor};
     transition: 300ms;
     &:hover {
-      color: ${props => props.theme.secondaryColor};
+      color: ${(props) => props.theme.accentColor3};
 
       span {
-        color: ${props => props.theme.darkColor};
+        color: ${(props) => props.theme.darkColor};
       }
     }
   }
 
   span {
-    color: ${props => props.theme.secondaryColor};
+    color: ${(props) => props.theme.accentColor3};
     transition: 300ms;
   }
 `

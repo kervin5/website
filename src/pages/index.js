@@ -14,7 +14,7 @@ import PersonIllustration from "../images/svgComponents/person"
 import SocialLinks from "../components/navigation/SocialLinks"
 import TopThreePosts from "../components/blog/topThreePosts"
 import ContactInfo from "../components/ui/ContactInfo"
-import HeroTitle from "../components/layout/HeroTitle"
+import HeroTitle from "../components/layout/HeroSection"
 
 const IndexPage = () => (
   <Layout>

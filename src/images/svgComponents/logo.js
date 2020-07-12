@@ -9,7 +9,7 @@ const colorize = (props) => {
   }
 
   to {
-    fill: ${props.theme.secondaryColor};
+    fill: ${props.theme.accentColor3};
   }
 `
 }

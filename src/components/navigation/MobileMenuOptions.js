@@ -6,9 +6,9 @@ import { Link } from "gatsby"
 
 const StyledMobileMenuOptions = styled.div`
   position: fixed;
-  top: ${props => (props.open ? "0" : "-100vh")};
+  top: ${(props) => (props.open ? "0" : "-100vh")};
   left: 0;
-  bottom: ${props => (props.open ? "0" : "100vh")};
+  bottom: ${(props) => (props.open ? "0" : "100vh")};
   right: 0;
   transition: 300ms;
 
@@ -21,7 +21,7 @@ const StyledMobileMenuOptions = styled.div`
     top: 0;
     bottom: 0;
     right: 0;
-    background-color: ${props => props.theme.secondaryColor};
+    background-color: ${(props) => props.theme.accentColor3};
   }
 
   @media (max-width: 845px) {
@@ -41,14 +41,14 @@ const StyledMobileMenuOptions = styled.div`
   }
 
   a {
-    color: ${props => props.theme.lightColor};
+    color: ${(props) => props.theme.lightColor};
     font-weight: bold;
     font-size: 1.4em;
     transition: 200ms;
     text-decoration: none;
     &:hover {
       font-size: 1.5em;
-      color: ${props => props.theme.accentColor};
+      color: ${(props) => props.theme.accentColor1};
     }
   }
 `

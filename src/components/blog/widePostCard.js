@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 import PostMeta from "./postMeta"
 
 const StyledPostCard = styled.div`
-  background-color: ${props => props.theme.lightColor};
+  background-color: ${(props) => props.theme.lightColor};
   margin-bottom: 20px;
   border-radius: 10px;
   overflow: hidden;
@@ -36,7 +36,7 @@ const StyledPostCard = styled.div`
 
     .PrimaryTag {
       text-transform: uppercase;
-      color: ${props => props.theme.accentColor};
+      color: ${(props) => props.theme.accentColor1};
       font-size: 0.8em;
       margin-bottom: 0;
     }
@@ -53,16 +53,16 @@ const StyledPostCard = styled.div`
 
     a {
       text-decoration: none;
-      color: ${props => props.theme.darkColor};
+      color: ${(props) => props.theme.darkColor};
       transition: 300ms;
     }
   }
 
   &:hover {
-    background-color: ${props => props.theme.secondaryColor};
+    background-color: ${(props) => props.theme.accentColor3};
     .Content {
       a {
-        color: ${props => props.theme.lightColor};
+        color: ${(props) => props.theme.lightColor};
       }
     }
   }

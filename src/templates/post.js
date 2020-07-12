@@ -31,7 +31,7 @@ const StyledArticle = styled.article`
 
   .PrimaryTag {
     text-transform: uppercase;
-    color: ${props => props.theme.accentColor};
+    color: ${(props) => props.theme.accentColor1};
     font-size: 0.75em;
     margin-bottom: 0;
     font-weight: bold;
@@ -62,7 +62,7 @@ const StyledArticle = styled.article`
       display: flex;
 
       &:active {
-        color: ${props => props.theme.secondaryColor};
+        color: ${(props) => props.theme.accentColor3};
       }
 
       .kg-bookmark-content {
@@ -175,7 +175,7 @@ const Post = ({ data }) => {
           "image": "${post.feature_image}",
           "editor": "Kervin Vasquez", 
           "genre": "${post.primary_tag.name} tips", 
-          "keywords": "${post.tags.map(tag => tag.name).join(" ")}", 
+          "keywords": "${post.tags.map((tag) => tag.name).join(" ")}", 
           "wordcount": "1120",
           "publisher": {
             "@type": "Organization",

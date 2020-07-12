@@ -5,8 +5,8 @@ import { Link } from "gatsby"
 const StyledButton = styled.span`
   & > * {
     display: inline-block;
-    background-color: ${props => props.theme.secondaryColor};
-    color: ${props => props.theme.lightColor};
+    background-color: ${(props) => props.theme.accentColor3};
+    color: ${(props) => props.theme.lightColor};
     padding: 10px;
     text-decoration: none;
     transition: 100ms;
@@ -18,7 +18,7 @@ const StyledButton = styled.span`
 
   a {
     &:visited {
-      color: ${props => props.theme.lightColor};
+      color: ${(props) => props.theme.lightColor};
     }
   }
 `

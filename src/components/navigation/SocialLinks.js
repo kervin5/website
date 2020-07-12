@@ -6,8 +6,8 @@ const StyledSocialLinks = styled.div`
   margin-top: 30px;
 
   .social-svg-mask path {
-    fill: ${props =>
-      props.inverted ? props.theme.lightColor : props.theme.secondaryColor};
+    fill: ${(props) =>
+      props.inverted ? props.theme.lightColor : props.theme.accentColor3};
   }
 
   a {
@@ -22,7 +22,7 @@ const StyledSocialLinks = styled.div`
   }
 `
 
-const SocialLinks = props => {
+const SocialLinks = (props) => {
   return (
     <StyledSocialLinks {...props}>
       <SocialIcon url="https://twitter.com/kervin5" />

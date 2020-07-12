@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import useScrollDetector from "scroll-detect-hook"
 
 const StyledPageSection = styled.div`
   background-color: ${(props) =>
@@ -18,17 +17,11 @@ const StyledPageSection = styled.div`
 `
 
 const PageSection = ({ color, children, id }) => {
-  const [isScrolling, direction, speed] = useScrollDetector()
   return (
     <StyledPageSection
       color={color}
       className={`PageSection`}
       {...(id ? { id } : {})}
-      style={{
-        transform: `skewY(${isScrolling && direction === "up" ? "" : "-"}${
-          speed / 15
-        }deg)`,
-      }}
     >
       <div className="Content">{children}</div>
     </StyledPageSection>

@@ -28,13 +28,13 @@ const StyledLayout = styled.div`
   padding: 0;
   padding-top: 0;
   overflow: hidden;
-  background-color: ${props => props.theme.lightColor};
-  color: ${props => props.theme.darkColor};
+  background-color: ${(props) => props.theme.lightColor};
+  color: ${(props) => props.theme.darkColor};
 
   a{
-    /* color: ${props => props.theme.secondaryColor}; */
+    /* color: ${(props) => props.theme.accentColor3}; */
     &:visited {
-    color: ${props => props.theme.mainColor};
+    color: ${(props) => props.theme.mainColor};
     }
   }
 `

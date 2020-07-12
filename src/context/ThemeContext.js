@@ -5,10 +5,10 @@ const ThemeContext = React.createContext([{}, () => {}])
 const lightTheme = {
   name: "light",
   mainColor: "#ffcc00",
-  secondaryColor: "#F45A2C",
-  accentColor: "#07538C",
-  accentColor2: "#00AAB5",
-  darkColor: "black",
+  accentColor3: "#ffe5e3",
+  accentColor1: "#07538C",
+  accentColor2: "#005ffe",
+  darkColor: "#2128bd",
   lightColor: "white",
   containerWidth: "1130px",
 }
@@ -16,8 +16,8 @@ const lightTheme = {
 const darkTheme = {
   name: "dark",
   mainColor: "#B79200",
-  secondaryColor: "#A84346",
-  accentColor: "#07538C",
+  accentColor3: "#A84346",
+  accentColor1: "#07538C",
   accentColor2: "#00AAB5",
   darkColor: "#ebf7fc",
   lightColor: "#25283D",
@@ -64,7 +64,7 @@ function addDays(days) {
   return result
 }
 
-const CustomThemeProvider = props => {
+const CustomThemeProvider = (props) => {
   const [themeName, themeSettings] = determineTheme()
   const [theme, setTheme] = useState(themeSettings)
   const [currentTheme, setCurrentTheme] = useState(themeName)

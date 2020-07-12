@@ -5,7 +5,7 @@ import PostMeta from "./postMeta"
 import Tags from "./tags/tags"
 
 const StyledCard = styled.div`
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.theme.name === "light"
       ? props.theme.lightColor
       : props.theme.mutedColor};
@@ -31,16 +31,16 @@ const StyledCard = styled.div`
     
     .PrimaryTag {
       text-transform: uppercase;
-      color: ${props =>
+      color: ${(props) =>
         props.theme.name === "light"
-          ? props.theme.accentColor
+          ? props.theme.accentColor1
           : props.theme.mainColor};
       font-size: 0.8em;
       margin-bottom: 0;
     }
 
     .Title {
-      font-size: ${props => (props.smallFont ? "0.8em" : "1.2em")};
+      font-size: ${(props) => (props.smallFont ? "0.8em" : "1.2em")};
       margin-bottom: 10px;
     
     }
@@ -48,7 +48,7 @@ const StyledCard = styled.div`
     .Excerpt {
       font-size: 0.8em;
       margin-bottom: 5px;
-      /* color: ${props =>
+      /* color: ${(props) =>
         props.theme.name === "light"
           ? props.theme.darkColor
           : props.theme.mainColor}; */
@@ -56,16 +56,16 @@ const StyledCard = styled.div`
 
     a {
       text-decoration: none;
-      color: ${props => props.theme.darkColor};
+      color: ${(props) => props.theme.darkColor};
       transition: 300ms;
     }
   }
 
   &:hover {
-    background-color: ${props => props.theme.secondaryColor};
+    background-color: ${(props) => props.theme.accentColor3};
     .Content {
       a {
-        color: ${props => props.theme.lightColor};
+        color: ${(props) => props.theme.lightColor};
       }
     }
   }

@@ -46,14 +46,14 @@ const StyledSearchResults = styled.ul`
     font-weight: bold;
 
     .Title {
-      color: ${props => props.theme.accentColor};
+      color: ${(props) => props.theme.accentColor1};
     }
 
     .Excerpt {
       font-size: 0.7em;
       text-decoration: none;
       font-weight: normal;
-      color: ${props => props.theme.darkColor};
+      color: ${(props) => props.theme.darkColor};
     }
   }
 `
@@ -64,7 +64,7 @@ const StyledSearchArea = styled.div`
   transition: 100ms;
   border: 1px solid gray;
   overflow: hidden;
-  background-color: ${props => props.theme.lightColor};
+  background-color: ${(props) => props.theme.lightColor};
   &:focus-within {
     /* transform: scale(1.2); */
     ul {
@@ -82,10 +82,10 @@ const SearchBar = () => {
   useEffect(() => {
     api.posts
       .browse({ limit: 5 })
-      .then(posts => {
+      .then((posts) => {
         setPosts(posts)
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err)
       })
   }, [])
@@ -93,7 +93,7 @@ const SearchBar = () => {
   useEffect(() => {
     if (query && query.length > 2) {
       setResults(
-        posts.filter(post => {
+        posts.filter((post) => {
           const textToSearch = query.toLowerCase()
           return (
             post.title.toLowerCase().includes(textToSearch) ||
@@ -107,20 +107,20 @@ const SearchBar = () => {
   }, [query, posts])
 
   return (
-    <StyledSearchForm method="POST" onSubmit={e => e.preventDefault()}>
+    <StyledSearchForm method="POST" onSubmit={(e) => e.preventDefault()}>
       <StyledSearchArea>
         <StyledInput
           type="search"
           placeholder="Search"
           value={query}
-          onChange={e => {
+          onChange={(e) => {
             setQuery(e.target.value)
           }}
         />
         {
           <StyledSearchResults className={"SearchResults"}>
             {results.length ? (
-              results.map(post => (
+              results.map((post) => (
                 <Link key={`Post${post.slug}`} to={`/blog/${post.slug}`}>
                   <li>
                     <p className="Title">{post.title}</p>
