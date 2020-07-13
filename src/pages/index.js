@@ -15,6 +15,7 @@ import SocialLinks from "../components/navigation/SocialLinks"
 import TopThreePosts from "../components/blog/topThreePosts"
 import ContactInfo from "../components/ui/ContactInfo"
 import HeroTitle from "../components/layout/HeroSection"
+import Skew from "../components/animation/Skew"
 
 const IndexPage = () => (
   <Layout>
@@ -27,6 +28,7 @@ const IndexPage = () => (
           </Col>
           <Col xs={12} md={6}> */}
       <HeroTitle />
+
       {/* <HTag nomargin>
               Kervin <Highlight>Vasquez</Highlight>
             </HTag>
@@ -39,7 +41,7 @@ const IndexPage = () => (
         </Row>
       </Grid> */}
     </PageSection>
-    <PageSection id="aboutMe" color="mainColor">
+    <PageSection id="aboutMe" color="mainColor" skew>
       <Grid>
         <Row middle="xs">
           <Col xs={12} md={6}>
@@ -80,19 +82,21 @@ const IndexPage = () => (
         <Row middle="xs">
           <Col xs={12} md={6}>
             <Padding>
-              <HTag>Services</HTag>
-              <p>
-                Whether you're a business owner looking to get started on a
-                project with a freelance web developer, a developer looking to
-                collaborate on something cool, or just want to say hi, shoot me
-                a message and let's work together.
-              </p>
+              <Skew>
+                <HTag>Services</HTag>
+                <p>
+                  Whether you're a business owner looking to get started on a
+                  project with a freelance web developer, a developer looking to
+                  collaborate on something cool, or just want to say hi, shoot
+                  me a message and let's work together.
+                </p>
 
-              <p>
-                I specialize in the development of static sites, UI/UX
-                development, Javascript web applications and Wordpress
-                development.
-              </p>
+                <p>
+                  I specialize in the development of static sites, UI/UX
+                  development, Javascript web applications and Wordpress
+                  development.
+                </p>
+              </Skew>
             </Padding>
           </Col>
           <Col xs={12} md={6}>
@@ -101,7 +105,7 @@ const IndexPage = () => (
         </Row>
       </Grid>
     </PageSection>
-    <PageSection id="projects" color="mainColor">
+    <PageSection id="projects" color="mainColor" skew>
       <Grid>
         <Row middle="xs">
           <Col xs={12} md={6}>

@@ -24,7 +24,10 @@ const StyledCircleGroup = styled.div`
   right: -5px;
   bottom: -50px;
   overflow: hidden;
-  background: ${(props) => props.theme.darkColor};
+  background: ${(props) =>
+    props.theme.name === "light"
+      ? props.theme.darkColor
+      : props.theme.mainColor};
 `
 const colors = ["accentColor2", "accentColor3", "mainColor"]
 

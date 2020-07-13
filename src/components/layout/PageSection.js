@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import Skew from "../animation/Skew"
 
 const StyledPageSection = styled.div`
   background-color: ${(props) =>
@@ -16,8 +17,18 @@ const StyledPageSection = styled.div`
   }
 `
 
-const PageSection = ({ color, children, id }) => {
-  return (
+const PageSection = ({ color, children, id, skew }) => {
+  return skew ? (
+    <Skew>
+      <StyledPageSection
+        color={color}
+        className={`PageSection`}
+        {...(id ? { id } : {})}
+      >
+        <div className="Content">{children}</div>
+      </StyledPageSection>
+    </Skew>
+  ) : (
     <StyledPageSection
       color={color}
       className={`PageSection`}

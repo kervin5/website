@@ -9,7 +9,7 @@ const StyledNavBarLogo = styled.span`
     color: ${(props) => props.theme.darkColor};
     transition: 300ms;
     &:hover {
-      color: ${(props) => props.theme.accentColor3};
+      color: ${(props) => props.theme.mainColor};
 
       span {
         color: ${(props) => props.theme.darkColor};
@@ -18,7 +18,7 @@ const StyledNavBarLogo = styled.span`
   }
 
   span {
-    color: ${(props) => props.theme.accentColor3};
+    color: ${(props) => props.theme.mainColor};
     transition: 300ms;
   }
 `

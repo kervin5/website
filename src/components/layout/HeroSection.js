@@ -1,12 +1,14 @@
 import React, { useState, useRef, useContext } from "react"
 import styled from "styled-components"
 import Circles from "../ui/ornaments/Cricles"
-import Skewer from "../ui/Skewer"
+import Skew from "../animation/Skew"
+import SlideUp from "../animation/SlideUp"
+import Shapes from "../../images/svgComponents/shapes"
 
 const StyledHeroSection = styled.div`
   position: relative;
   z-index: 2;
-  overflow: hidden;
+  /* overflow: hidden; */
 `
 
 const StyledHeroContent = styled.div`
@@ -37,9 +39,10 @@ const StyledHeroHeader = styled.div`
 `
 
 const StyledHeroBlender = styled.div`
-  color: #000;
-  background: #fff;
-  mix-blend-mode: screen;
+  color: ${(props) => (props.theme.name === "light" ? "#000" : "#fff")};
+  background: ${(props) => props.theme.lightColor};
+  mix-blend-mode: ${(props) =>
+    props.theme.name === "light" ? "screen" : "darken"};
   position: relative;
   z-index: 1;
   &::before {
@@ -50,18 +53,19 @@ const StyledHeroBlender = styled.div`
     right: -6px;
     bottom: -52px;
     z-index: -1;
-    background-color: white;
+    background-color: ${(props) => props.theme.lightColor};
   }
 `
 
 const StyledHeader = styled.h1`
   position: relative;
   display: inline-block;
-  overflow: hidden;
+  /* overflow: hidden; */
   vertical-align: top;
   padding: 0.15em;
   margin: -0.15em;
   font-size: 90px;
+  transform: translate3d(0, 0, 0);
 `
 
 const HeroSection = () => {
@@ -80,23 +84,25 @@ const HeroSection = () => {
       onTouchMove={updatePoistion}
       ref={container}
     >
-      <StyledHeroContent>
-        <StyledHeroBody>
-          <StyledHeroContainer>
-            <StyledHeroHeader>
-              <Circles position={position} quantity={3} size={420} />
-              <StyledHeroBlender>
-                <Skewer>
-                  <StyledHeader>Kervin</StyledHeader>
-                  <br />
-
-                  <StyledHeader>Web Developer</StyledHeader>
-                </Skewer>
-              </StyledHeroBlender>
-            </StyledHeroHeader>
-          </StyledHeroContainer>
-        </StyledHeroBody>
-      </StyledHeroContent>
+      <Shapes />
+      <SlideUp>
+        <StyledHeroContent>
+          <StyledHeroBody>
+            <StyledHeroContainer>
+              <StyledHeroHeader>
+                <Circles position={position} quantity={3} size={420} />
+                <StyledHeroBlender>
+                  <Skew>
+                    <StyledHeader>Kervin</StyledHeader>
+                    <br />
+                    <StyledHeader>Web Developer</StyledHeader>
+                  </Skew>
+                </StyledHeroBlender>
+              </StyledHeroHeader>
+            </StyledHeroContainer>
+          </StyledHeroBody>
+        </StyledHeroContent>
+      </SlideUp>
     </StyledHeroSection>
   )
 }
