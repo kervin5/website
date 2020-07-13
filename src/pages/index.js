@@ -77,26 +77,24 @@ const IndexPage = () => (
         </Row>
       </Grid>
     </PageSection>
-    <PageSection id="services">
+    <PageSection id="services" skew>
       <Grid>
         <Row middle="xs">
           <Col xs={12} md={6}>
             <Padding>
-              <Skew>
-                <HTag>Services</HTag>
-                <p>
-                  Whether you're a business owner looking to get started on a
-                  project with a freelance web developer, a developer looking to
-                  collaborate on something cool, or just want to say hi, shoot
-                  me a message and let's work together.
-                </p>
+              <HTag>Services</HTag>
+              <p>
+                Whether you're a business owner looking to get started on a
+                project with a freelance web developer, a developer looking to
+                collaborate on something cool, or just want to say hi, shoot me
+                a message and let's work together.
+              </p>
 
-                <p>
-                  I specialize in the development of static sites, UI/UX
-                  development, Javascript web applications and Wordpress
-                  development.
-                </p>
-              </Skew>
+              <p>
+                I specialize in the development of static sites, UI/UX
+                development, Javascript web applications and Wordpress
+                development.
+              </p>
             </Padding>
           </Col>
           <Col xs={12} md={6}>

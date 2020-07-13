@@ -11,7 +11,8 @@ const StyledPageSection = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  transition: 100ms;
+  will-change: transform;
+
   .Content {
     width: 100%;
   }
