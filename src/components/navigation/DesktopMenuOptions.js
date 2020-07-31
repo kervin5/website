@@ -11,9 +11,11 @@ const StyledDesktopMenuOptions = styled.div`
     transition: 200ms;
     text-decoration: none;
     white-space: nowrap;
+    padding: 10px;
+    border-radius: 25px;
     &:hover {
-      background-color: ${(props) => props.theme.accentColor3};
-      color: ${(props) => props.theme.lightColor};
+      background-color: ${(props) => props.theme.mainColor};
+      color: ${(props) => props.theme.darkColor};
       padding: 10px;
     }
   }

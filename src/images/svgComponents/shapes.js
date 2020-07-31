@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Shape from "./shape"
 import randomNumber from "../../lib/randomNumber"
 import { TweenMax } from "gsap"
+
 // import useWindowWidth from "../../hooks/useWindowWidth"
 
 const StyledShapes = styled.div`
@@ -15,10 +16,11 @@ const StyledShapes = styled.div`
   pointer-events: none;
 `
 
-const Shapes = ({ slideUp }) => {
+const Shapes = ({ delay = 0, duration = 10, repeat = false }) => {
   const [numberOfshapes, setNumberOfShapes] = useState(10)
+
   // const [shapesToRender, setShapesToRender] = useState(null)
-  const shapesRef = useRef([])
+  const shapesRef = useRef(null)
   const shapesToRender = [...Array(numberOfshapes).keys()].map((index) => {
     const position = { x: randomNumber(1, 100), y: randomNumber(1, 100) }
     return (
@@ -35,27 +37,27 @@ const Shapes = ({ slideUp }) => {
   useEffect(() => {
     TweenMax.fromTo(
       shapesRef.current,
-      20,
+      duration,
       {
         y: "100vh",
-
-        repeat: -1,
+        repeat: repeat ? -1 : 0,
+        delay,
+        repeatDelay: delay > 0 ? duration : 0,
+        ease: "none",
       },
       {
         y: "-100vh",
-
-        repeat: -1,
-        stagger: -12,
+        repeat: repeat ? -1 : 0,
+        delay,
+        repeatDelay: delay > 0 ? duration : 0,
+        ease: "none",
       }
     )
   }, [])
 
   return (
     <>
-      <StyledShapes ref={(el) => shapesRef.current.push(el)} className="Shapes">
-        {shapesToRender}
-      </StyledShapes>
-      <StyledShapes ref={(el) => shapesRef.current.push(el)} className="Shapes">
+      <StyledShapes ref={shapesRef} className="Shapes">
         {shapesToRender}
       </StyledShapes>
     </>

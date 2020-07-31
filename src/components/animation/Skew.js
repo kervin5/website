@@ -8,9 +8,9 @@ const Skewer = ({ children }) => {
   return (
     <Tween
       to={{
-        skewY: (direction === "up" ? 1 : -1) * (speed < 5 ? speed : 5) * 2,
+        skewY: (direction === "up" ? 1 : -1) * (speed < 5 ? speed : 5) * 0.5,
       }}
-      ease="slow(0.7,0.7,false)"
+      // ease="slow(0.01,0.01,false)"
       duration={1}
     >
       {children}

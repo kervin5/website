@@ -53,7 +53,7 @@ const rotate = () => {
     }
     50% { 
       
-       transform: rotate3d(0, 0, 1, 180deg) scale3d(2,2,1);;
+       transform: rotate3d(0, 0, 1, 180deg) scale3d(1.2,1.2,1);;
     }
     100% { 
       

@@ -1,6 +1,5 @@
 import React from "react"
 import { Tween } from "react-gsap"
-import { TweenMax } from "gsap"
 
 const Skewer = ({ children, stagger }) => {
   return (

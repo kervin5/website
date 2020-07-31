@@ -84,7 +84,12 @@ const HeroSection = () => {
       onTouchMove={updatePoistion}
       ref={container}
     >
-      <Shapes />
+      <Shapes duration={2.5} />
+      {/*<Shapes duration={2} repeat /> */}
+      <Shapes duration={8} repeat />
+      <Shapes delay={4} duration={8} repeat />
+      <Shapes duration={32} repeat />
+      <Shapes duration={32} delay={16} repeat />
       <SlideUp>
         <StyledHeroContent>
           <StyledHeroBody>
