@@ -3,7 +3,10 @@ import { withTheme } from "styled-components"
 import PropTypes from "prop-types"
 
 const HTag = React.forwardRef(
-  ({ as, children, weight, margin, nomargin, color, id, theme }, ref) => {
+  (
+    { as, children, weight, margin, nomargin, color = "black", id, theme },
+    ref
+  ) => {
     const TagToRender = as
     const otherProps = id ? { id } : {}
 

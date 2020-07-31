@@ -27,7 +27,7 @@ const IndexPage = () => (
             <Logo />
           </Col>
           <Col xs={12} md={6}> */}
-      <HeroTitle />
+      <HeroTitle firstLine="Kervin" secondLine="Web Developer" />
 
       {/* <HTag nomargin>
               Kervin <Highlight>Vasquez</Highlight>

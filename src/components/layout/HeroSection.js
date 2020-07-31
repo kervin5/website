@@ -68,7 +68,7 @@ const StyledHeader = styled.h1`
   transform: translate3d(0, 0, 0);
 `
 
-const HeroSection = () => {
+const HeroSection = ({ firstLine, secondLine }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 })
 
   const container = useRef()
@@ -98,9 +98,9 @@ const HeroSection = () => {
                 <Circles position={position} quantity={3} size={420} />
                 <StyledHeroBlender>
                   <Skew>
-                    <StyledHeader>Kervin</StyledHeader>
+                    <StyledHeader>{firstLine}</StyledHeader>
                     <br />
-                    <StyledHeader>Web Developer</StyledHeader>
+                    <StyledHeader>{secondLine}</StyledHeader>
                   </Skew>
                 </StyledHeroBlender>
               </StyledHeroHeader>
