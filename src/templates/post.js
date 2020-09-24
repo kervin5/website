@@ -203,7 +203,7 @@ const Post = ({ data }) => {
               "datePublished": "2020-02-26",
               "description": "This is the company logo of Kervin Tech",
               "name": "Kervin Tech Logo"
-            },
+            }
           },
           "editor": "Kervin Vasquez", 
 
