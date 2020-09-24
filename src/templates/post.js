@@ -169,14 +169,27 @@ const Post = ({ data }) => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: `{ "@context": "https://schema.org", 
-          "@type": "BlogPosting",
+          "@type": "Article",
           "headline": "${post.title}",
           "alternativeHeadline": "${post.title}",
-          "image": "${post.feature_image}",
-          "editor": "Kervin Vasquez", 
-          "genre": "${post.primary_tag.name} tips", 
-          "keywords": "${post.tags.map((tag) => tag.name).join(" ")}", 
-          "wordcount": "1120",
+          "name": "${post.title}",
+          "thumbnailUrl": "${post.feature_image}",
+          "description": "${post.excerpt}",
+          "url": "${postUrl}",
+
+          "image": {
+            "@type": "ImageObject",
+            "url": "${post.feature_image}",
+            "width": "682",
+            "height": "400"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "${post.primary_author.name}"
+          },
+          "datePublished": "${post.published_at}",
+          "dateCreated": "${post.created_at}",
+          "dateModified": "${post.updated_at}",
           "publisher": {
             "@type": "Organization",
             "name": "Kervin Tech",
@@ -190,18 +203,15 @@ const Post = ({ data }) => {
               "description": "This is the company logo of Kervin Tech",
               "name": "Kervin Tech Logo"
             },
-            "url": "https://kervin.tech"
           },
-          "url": "${postUrl}",
-          "datePublished": "${post.published_at}",
-          "dateCreated": "${post.created_at}",
-          "dateModified": "${post.updated_at}",
-          "description": "${post.excerpt}",
+          "editor": "Kervin Vasquez", 
+
+          "genre": "${post.primary_tag.name} tips", 
+          "keywords": "${post.tags.map((tag) => tag.name).join(",")}", 
+          "wordcount": "${post.plaintext.split(" ").length}", 
           "articleBody": ${JSON.stringify(post.plaintext)},
-            "author": {
-             "@type": "Person",
-             "name": "${post.primary_author.name}"
-           },
+          "text": ${JSON.stringify(post.plaintext)},
+            
            "mainEntityOfPage": "True"
           }
           `,

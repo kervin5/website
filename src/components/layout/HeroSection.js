@@ -66,6 +66,7 @@ const StyledHeader = styled.h1`
   margin: -0.15em;
   font-size: 90px;
   transform: translate3d(0, 0, 0);
+  font-size: 20rem;
 `
 
 const HeroSection = ({ firstLine, secondLine }) => {
@@ -73,7 +74,7 @@ const HeroSection = ({ firstLine, secondLine }) => {
 
   const container = useRef()
   const updatePoistion = (e) => {
-    const yCorrectionFactor = container.current.clientHeight / 2.7
+    const yCorrectionFactor = container.current.clientHeight / 3.5
 
     setPosition({ x: e.clientX, y: e.clientY - yCorrectionFactor })
   }
@@ -84,12 +85,12 @@ const HeroSection = ({ firstLine, secondLine }) => {
       onTouchMove={updatePoistion}
       ref={container}
     >
-      <Shapes duration={2.5} />
+      {/* <Shapes duration={2.5} /> */}
       {/*<Shapes duration={2} repeat /> */}
-      <Shapes duration={8} repeat />
-      <Shapes delay={4} duration={8} repeat />
-      <Shapes duration={32} repeat />
-      <Shapes duration={32} delay={16} repeat />
+      {/* <Shapes duration={8} repeat /> */}
+      {/* <Shapes delay={4} duration={8} repeat /> */}
+      {/* <Shapes duration={32} repeat /> */}
+      {/* <Shapes duration={32} delay={16} repeat /> */}
       <SlideUp>
         <StyledHeroContent>
           <StyledHeroBody>
@@ -99,8 +100,8 @@ const HeroSection = ({ firstLine, secondLine }) => {
                 <StyledHeroBlender>
                   <Skew>
                     <StyledHeader>{firstLine}</StyledHeader>
-                    <br />
-                    <StyledHeader>{secondLine}</StyledHeader>
+                    {/* <br /> */}
+                    {/* <StyledHeader>{secondLine}</StyledHeader> */}
                   </Skew>
                 </StyledHeroBlender>
               </StyledHeroHeader>

@@ -27,21 +27,21 @@ const IndexPage = () => (
             <Logo />
           </Col>
           <Col xs={12} md={6}> */}
-      <HeroTitle firstLine="Kervin" secondLine="Web Developer" />
-
+      <HeroTitle firstLine="Kervin" />
+      <SocialLinks />
       {/* <HTag nomargin>
               Kervin <Highlight>Vasquez</Highlight>
             </HTag>
 
             <HTag as="h2" weight="300">
               Full-Stack Developer
-              <SocialLinks />
+              
             </HTag> */}
       {/* </Col>
         </Row>
       </Grid> */}
     </PageSection>
-    <PageSection id="aboutMe" color="mainColor" skew>
+    <PageSection id="aboutMe" skew>
       <Grid>
         <Row middle="xs">
           <Col xs={12} md={6}>
@@ -103,7 +103,7 @@ const IndexPage = () => (
         </Row>
       </Grid>
     </PageSection>
-    <PageSection id="projects" color="mainColor" skew>
+    <PageSection id="projects" skew>
       <Grid>
         <Row middle="xs">
           <Col xs={12} md={6}>
@@ -164,7 +164,7 @@ const IndexPage = () => (
         </Row>
       </Grid>
     </PageSection>
-    <PageSection id="contact" color="mainColor">
+    <PageSection id="contact">
       <ContactInfo />
     </PageSection>
   </Layout>
