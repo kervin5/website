@@ -210,8 +210,8 @@ const Post = ({ data }) => {
           "genre": "${post.primary_tag.name} tips", 
           "keywords": "${post.tags.map((tag) => tag.name).join(",")}", 
           "wordcount": "${post.plaintext.split(" ").length}", 
-          "articleBody": "${JSON.stringify(post.plaintext)}",
-          "text": "${JSON.stringify(post.plaintext)}",
+          "articleBody": ${JSON.stringify(post.plaintext)},
+          "text": ${JSON.stringify(post.plaintext)},
             
            "mainEntityOfPage": "True"
           }
