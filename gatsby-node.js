@@ -4,8 +4,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   //Create pages for individual articles ============================================================================
-  const postTemplate = path.resolve(`./src/templates/post.js`)
-  const tagTemplate = path.resolve(`./src/templates/tag.js`)
+  const postTemplate = path.resolve(`./src/templates/Post.jsx`)
+  const tagTemplate = path.resolve(`./src/templates/Tag.jsx`)
 
   // Query Ghost data
   const result = await graphql(`
@@ -66,7 +66,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (tagsResult.data.allGhostTag) {
     // Create pages for each Ghost post
     const items = tagsResult.data.allGhostTag.nodes
-    items.forEach(node => {
+    items.forEach((node) => {
       node.url = `blog/tag/${node.slug}/`
 
       createPage({
