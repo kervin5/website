@@ -5,7 +5,7 @@ const ThemeContext = React.createContext([{}, () => {}])
 const lightTheme = {
   name: "light",
   mainColor: "#ffcc00",
-  accentColor3: "#ffe5e3",
+  accentColor3: "#FF6363",
   accentColor1: "#07538C",
   accentColor2: "#005ffe",
   darkColor: "#2128bd",

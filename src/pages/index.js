@@ -1,6 +1,6 @@
 import React from "react"
 import { Grid, Row, Col } from "react-flexbox-grid"
-import Layout from "../components/layout/layout"
+import Layout from "../components/layout/layout_"
 import SEO from "../components/seo"
 import DevicesImages from "../images/DevicesImages"
 import Button from "../components/ui/Button"
