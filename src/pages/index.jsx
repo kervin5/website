@@ -27,8 +27,11 @@ const IndexPage = () => (
             <Logo />
           </Col>
           <Col xs={12} md={6}> */}
-      <HeroSection firstLine="Kervin" secondLine="Web Developer" />
-      <SocialLinks />
+      <HeroSection firstLine="Kervin" secondLine="Web Developer">
+        <span />
+      </HeroSection>
+      {/* <h2>Fullstack Developer</h2> */}
+      {/* <SocialLinks /> */}
       {/* <Header nomargin>
               Kervin <Highlight>Vasquez</Highlight>
             </Header>

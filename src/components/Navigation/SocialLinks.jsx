@@ -7,7 +7,7 @@ const StyledSocialLinks = styled.div`
 
   .social-svg-mask path {
     fill: ${(props) =>
-      props.inverted ? props.theme.lightColor : props.theme.accentColor3};
+      props.inverted ? props.theme.lightColor : props.theme.accentColor1};
   }
 
   a {

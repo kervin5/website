@@ -79,7 +79,7 @@ const StyledHeader = styled.h1`
   }
 `
 
-const HeroSection = ({ firstLine, secondLine }) => {
+const HeroSection = ({ firstLine, secondLine, children }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 })
 
   const container = useRef()
@@ -112,6 +112,7 @@ const HeroSection = ({ firstLine, secondLine }) => {
                     <StyledHeader>{firstLine}</StyledHeader>
                     {/* <br />
                     <StyledHeader fontSize={"5rem"}>{secondLine}</StyledHeader> */}
+                    {children}
                   </Skew>
                 </StyledHeroBlender>
               </StyledHeroHeader>

@@ -43,18 +43,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Inter`,
-            variants: [`300`, `400`, `700`],
-          },
-          {
-            family: `Fira Mono`,
-            variants: [`400`],
-          },
+          `Inter`,
+          `Fira Mono\:400`,
+          `Pacifico`, // you can also specify font weights and styles
         ],
+        display: "swap",
       },
     },
     {
