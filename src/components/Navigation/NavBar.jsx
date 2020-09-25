@@ -7,7 +7,7 @@ import { Grid, Row, Col } from "react-flexbox-grid"
 import NavBarLogo from "./NavBarLogo"
 import Menu from "./Menu"
 import useScrollHandler from "../../lib/scroll"
-import ThemeToggle from "../UI/ThemeToggle"
+// import ThemeToggle from "../UI/ThemeToggle"
 
 const StyledNavBar = styled.nav`
   position: fixed;
@@ -40,7 +40,7 @@ const NavBar = () => {
             <NavBarLogo />
           </Col>
           <Col xs={7} className="ActionButtons">
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             <Menu />
           </Col>
         </Row>

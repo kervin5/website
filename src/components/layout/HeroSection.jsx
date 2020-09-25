@@ -1,8 +1,9 @@
-import React, { useState, useRef, useContext } from "react"
+import React, { useState, useRef } from "react"
 import styled from "styled-components"
 import Circles from "../UI/Ornaments/Cricles"
 import Skew from "../Animation/Skew"
 import SlideUp from "../Animation/SlideUp"
+import ShapesBackground from "../../images/SVGComponents/ShapesBakground"
 // import Shapes from "../../images/SVGComponents/Shapes"
 
 const StyledHeroSection = styled.div`
@@ -61,12 +62,21 @@ const StyledHeader = styled.h1`
   position: relative;
   display: inline-block;
   /* overflow: hidden; */
+  transition: 300ms;
   vertical-align: top;
   padding: 0.15em;
   margin: -0.15em;
   font-size: 90px;
   transform: translate3d(0, 0, 0);
-  font-size: 20rem;
+  font-size: ${(props) => props.fontSize ?? "20rem"};
+  &::selection {
+    background-color: ${(props) => props.theme.accentColor1};
+    color: ${(props) => props.theme.lightColor};
+  }
+
+  @media (max-width: 920px) {
+    font-size: 10rem;
+  }
 `
 
 const HeroSection = ({ firstLine, secondLine }) => {
@@ -100,8 +110,8 @@ const HeroSection = ({ firstLine, secondLine }) => {
                 <StyledHeroBlender>
                   <Skew>
                     <StyledHeader>{firstLine}</StyledHeader>
-                    {/* <br /> */}
-                    {/* <StyledHeader>{secondLine}</StyledHeader> */}
+                    {/* <br />
+                    <StyledHeader fontSize={"5rem"}>{secondLine}</StyledHeader> */}
                   </Skew>
                 </StyledHeroBlender>
               </StyledHeroHeader>
@@ -109,6 +119,7 @@ const HeroSection = ({ firstLine, secondLine }) => {
           </StyledHeroBody>
         </StyledHeroContent>
       </SlideUp>
+      <ShapesBackground />
     </StyledHeroSection>
   )
 }

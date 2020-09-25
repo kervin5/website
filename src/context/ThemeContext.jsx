@@ -26,32 +26,33 @@ const darkTheme = {
 }
 
 function determineTheme() {
-  const hours = new Date().getHours()
-  const isDayTime = hours > 8 && hours < 20
-  let userTheme = null
-  let themeExpiration = null
-  let expired = true
+  // const hours = new Date().getHours()
+  // const isDayTime = hours > 8 && hours < 20
+  // let userTheme = null
+  // let themeExpiration = null
+  // let expired = true
 
-  if (typeof window !== "undefined") {
-    userTheme = localStorage.getItem("theme")
-    themeExpiration = localStorage.getItem("themeExpiration")
-  }
-  if (userTheme && themeExpiration) {
-    const today = new Date()
-    const expiration = new Date(themeExpiration)
-    if (today.getTime() <= expiration.getTime()) {
-      expired = false
-    } else {
-      localStorage.removeItem("themeExpiration")
-      localStorage.removeItem("theme")
-      expired = true
-    }
-  }
-  return userTheme && !expired
-    ? getTheme(userTheme)
-    : isDayTime
-    ? getTheme("light")
-    : getTheme("dark")
+  // if (typeof window !== "undefined") {
+  //   userTheme = localStorage.getItem("theme")
+  //   themeExpiration = localStorage.getItem("themeExpiration")
+  // }
+  // if (userTheme && themeExpiration) {
+  //   const today = new Date()
+  //   const expiration = new Date(themeExpiration)
+  //   if (today.getTime() <= expiration.getTime()) {
+  //     expired = false
+  //   } else {
+  //     localStorage.removeItem("themeExpiration")
+  //     localStorage.removeItem("theme")
+  //     expired = true
+  //   }
+  // }
+  // return userTheme && !expired
+  //   ? getTheme(userTheme)
+  //   : isDayTime
+  //   ? getTheme("light")
+  //   : getTheme("dark")
+  return getTheme("light")
 }
 
 function getTheme(name) {

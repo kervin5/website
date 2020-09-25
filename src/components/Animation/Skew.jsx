@@ -3,8 +3,8 @@ import { Tween } from "react-gsap"
 import useScrollDetector from "scroll-detect-hook"
 
 const Skewer = ({ children }) => {
-  const [isScrolling, direction, speed] = useScrollDetector()
-  console.log(speed)
+  const [, direction, speed] = useScrollDetector()
+
   return (
     <Tween
       to={{

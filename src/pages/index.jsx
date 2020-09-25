@@ -14,7 +14,7 @@ import PersonIllustration from "../images/SvgComponents/person"
 import SocialLinks from "../components/Navigation/SocialLinks"
 import TopThreePosts from "../components/Blog/TopThreePosts"
 import ContactInfo from "../components/UI/ContactInfo"
-import HeroTitle from "../components/Layout/HeroSection"
+import HeroSection from "../components/Layout/HeroSection"
 // import Skew from "../components/Animation/Skew"
 
 const IndexPage = () => (
@@ -27,7 +27,7 @@ const IndexPage = () => (
             <Logo />
           </Col>
           <Col xs={12} md={6}> */}
-      <HeroTitle firstLine="Kervin" />
+      <HeroSection firstLine="Kervin" secondLine="Web Developer" />
       <SocialLinks />
       {/* <Header nomargin>
               Kervin <Highlight>Vasquez</Highlight>
