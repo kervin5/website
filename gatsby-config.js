@@ -49,6 +49,7 @@ module.exports = {
           `Inter`,
           `Fira Mono\:400`,
           `Pacifico`, // you can also specify font weights and styles
+          `Poppins\:400,800`,
         ],
         display: "swap",
       },

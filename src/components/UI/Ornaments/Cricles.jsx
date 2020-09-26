@@ -28,6 +28,22 @@ const StyledCircleGroup = styled.div`
     props.theme.name === "light"
       ? props.theme.darkColor
       : props.theme.mainColor};
+  transition: 300ms;
+
+  /* background: linear-gradient(
+    45deg,
+    #1a22bd 12.5%,
+    #2128bd 12.5%,
+    #2128bd 37.5%,
+    #1a22bd 37.5%,
+    #1a22bd 62.5%,
+    #2128bd 62.5%,
+    #2128bd 87.5%,
+    #1a22bd 87.5%
+  );
+  background-size: 300px 300px;
+  background-position: 50px 50px;
+ */
 `
 const colors = ["accentColor2", "accentColor3", "mainColor"]
 
@@ -57,7 +73,7 @@ const Cricles = ({ position, size, quantity }) => {
       stagger: -0.02,
     })
   }, [position])
-  return <StyledCircleGroup>{circles}</StyledCircleGroup>
+  return <StyledCircleGroup className="Circles">{circles}</StyledCircleGroup>
 }
 
 export default Cricles

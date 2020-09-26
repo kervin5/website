@@ -22,8 +22,6 @@ const StyledHeroBody = styled.div`
   height: 100vh;
   width: 100%;
   align-items: center;
-  height: 100vh;
-  width: 100%;
   display: flex;
   z-index: 0;
 `
@@ -37,6 +35,11 @@ const StyledHeroHeader = styled.div`
   position: relative;
   contain: layout style;
   text-align: center;
+  &:hover {
+    .Circles {
+      background: red;
+    }
+  }
 `
 
 const StyledHeroBlender = styled.div`
@@ -107,9 +110,11 @@ const HeroSection = ({ firstLine, secondLine, children }) => {
             <StyledHeroContainer>
               <StyledHeroHeader>
                 <Circles position={position} quantity={3} size={420} />
+
                 <StyledHeroBlender>
                   <Skew>
                     <StyledHeader>{firstLine}</StyledHeader>
+                    {/* <Shapes /> */}
                     {/* <br />
                     <StyledHeader fontSize={"5rem"}>{secondLine}</StyledHeader> */}
                     {children}
