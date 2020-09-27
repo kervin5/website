@@ -59,7 +59,7 @@ const StyledPostCard = styled.div`
   }
 
   &:hover {
-    background-color: ${(props) => props.theme.accentColor3};
+    background-color: ${(props) => props.theme.mainColor};
     .Content {
       a {
         color: ${(props) => props.theme.lightColor};

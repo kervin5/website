@@ -9,7 +9,7 @@ const StyledSubscribeForm = styled.div`
   padding: 30px;
   margin: 30px auto;
 
-  background-color: ${(props) => props.theme.accentColor2};
+  background-color: ${(props) => props.theme.accentColor1};
   border-radius: 10px;
   & > div {
     display: flex;

@@ -9,7 +9,7 @@ const colorize = (props) => {
   }
 
   to {
-    fill: ${props.theme.accentColor3};
+    fill: ${props.theme.mainColor};
   }
 `
 }
@@ -17,15 +17,18 @@ const colorize = (props) => {
 const StyledDiv = styled.div`
   width: 100%;
   height: 100%;
-  
+
   svg {
-    path, circle {
-     &:nth-child(even) {
-        animation: ${colorize} 9s cubic-bezier(.17,.67,.83,.67) infinite alternate; 
+    path,
+    circle {
+      &:nth-child(even) {
+        animation: ${colorize} 9s cubic-bezier(0.17, 0.67, 0.83, 0.67) infinite
+          alternate;
       }
 
       &:nth-child(odd) {
-        animation: ${colorize} 9s cubic-bezier(.17,.67,.83,.67) infinite alternate;
+        animation: ${colorize} 9s cubic-bezier(0.17, 0.67, 0.83, 0.67) infinite
+          alternate;
         animation-delay: 10s;
       }
 
@@ -48,7 +51,6 @@ const StyledDiv = styled.div`
         animation: ${colorize} 9s cubic-bezier(.17,.67,.83,.67) infinite alternate;
         animation-delay: 50s;
       } */
-
     }
   }
 `

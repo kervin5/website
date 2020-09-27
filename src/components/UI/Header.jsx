@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 const Header = React.forwardRef(
   (
-    { as, children, weight, margin, nomargin, color = "black", id, theme },
+    { as, children, weight, margin, nomargin, color = "darkColor", id, theme },
     ref
   ) => {
     const TagToRender = as

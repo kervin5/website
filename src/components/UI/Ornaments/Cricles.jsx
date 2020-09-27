@@ -45,7 +45,7 @@ const StyledCircleGroup = styled.div`
   background-position: 50px 50px;
  */
 `
-const colors = ["accentColor2", "accentColor3", "mainColor"]
+const colors = ["mainColor", "mutedColor", "accentColor1"]
 
 const Cricles = ({ position, size, quantity }) => {
   let cardRef = useRef([])

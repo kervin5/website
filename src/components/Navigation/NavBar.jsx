@@ -19,7 +19,7 @@ const StyledNavBar = styled.nav`
   box-shadow: ${(props) =>
     props.scroll ? "none" : "-1px 2px 5px -3px rgba(0,0,0,0.52)"};
   z-index: 999;
-  padding: 10px;
+  padding: 50px;
   transition: 300ms;
 
   .ActionButtons {

@@ -62,7 +62,7 @@ const StyledArticle = styled.article`
       display: flex;
 
       &:active {
-        color: ${(props) => props.theme.accentColor3};
+        color: ${(props) => props.theme.mainColor};
       }
 
       .kg-bookmark-content {

@@ -11,7 +11,7 @@ const StyledHabmburgerToggle = styled.div`
     width: 30px;
     display: block;
     background-color: ${(props) =>
-      props.open ? props.theme.lightColor : props.theme.accentColor3};
+      props.open ? props.theme.lightColor : props.theme.mainColor};
     margin-bottom: 3px;
     border-radius: 3px;
     transition: 300ms;

@@ -4,21 +4,21 @@ const ThemeContext = React.createContext([{}, () => {}])
 
 const lightTheme = {
   name: "light",
-  mainColor: "#ffcc00",
-  accentColor3: "#FF6363",
-  accentColor1: "#07538C",
-  accentColor2: "#005ffe",
-  darkColor: "#2128bd",
+  mainColor: "#ff7d63",
+  accentColor1: "#f5ebf2",
+  darkColor: "#27437d",
   lightColor: "white",
   containerWidth: "1130px",
+  mutedColor: "#E9D8D8",
+  mutedBgColor: "#F8F8F8",
 }
 
 const darkTheme = {
   name: "dark",
   mainColor: "#ffcc00",
-  accentColor3: "#A84346",
-  accentColor1: "#07538C",
-  accentColor2: "#00AAB5",
+  accentColor1: "#A84346",
+  accentColor2: "#07538C",
+
   darkColor: "#ebf7fc",
   lightColor: "#25283D",
   mutedColor: "#2a2e4d",

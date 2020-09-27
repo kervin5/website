@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react"
 import styled from "styled-components"
-import Circles from "../UI/Ornaments/Cricles"
-import Skew from "../Animation/Skew"
-import SlideUp from "../Animation/SlideUp"
-import ShapesBackground from "../../images/SVGComponents/ShapesBakground"
+import Circles from "../../UI/Ornaments/Cricles"
+import Skew from "../../Animation/Skew"
+import SlideUp from "../../Animation/SlideUp"
+
 // import Shapes from "../../images/SVGComponents/Shapes"
 
 const StyledHeroSection = styled.div`
@@ -35,11 +35,11 @@ const StyledHeroHeader = styled.div`
   position: relative;
   contain: layout style;
   text-align: center;
-  &:hover {
+  /* &:hover {
     .Circles {
       background: red;
     }
-  }
+  } */
 `
 
 const StyledHeroBlender = styled.div`
@@ -55,7 +55,7 @@ const StyledHeroBlender = styled.div`
     top: -12px;
     left: -6px;
     right: -6px;
-    bottom: -52px;
+    bottom: -520px;
     z-index: -1;
     background-color: ${(props) => props.theme.lightColor};
   }
@@ -69,9 +69,9 @@ const StyledHeader = styled.h1`
   vertical-align: top;
   padding: 0.15em;
   margin: -0.15em;
-  font-size: 90px;
+  font-weight: 900;
   transform: translate3d(0, 0, 0);
-  font-size: ${(props) => props.fontSize ?? "20rem"};
+  font-size: ${(props) => props.fontSize ?? "15rem"};
   &::selection {
     background-color: ${(props) => props.theme.accentColor1};
     color: ${(props) => props.theme.lightColor};
@@ -82,7 +82,16 @@ const StyledHeader = styled.h1`
   }
 `
 
-const HeroSection = ({ firstLine, secondLine, children }) => {
+const StyledChildren = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 4;
+  flex-direction: column;
+`
+
+const HeroSection = ({ firstLine, children }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 })
 
   const container = useRef()
@@ -99,9 +108,7 @@ const HeroSection = ({ firstLine, secondLine, children }) => {
       ref={container}
     >
       {/* <Shapes duration={2.5} /> */}
-      {/*<Shapes duration={2} repeat /> */}
-      {/* <Shapes duration={8} repeat /> */}
-      {/* <Shapes delay={4} duration={8} repeat /> */}
+
       {/* <Shapes duration={32} repeat /> */}
       {/* <Shapes duration={32} delay={16} repeat /> */}
       <SlideUp>
@@ -114,18 +121,16 @@ const HeroSection = ({ firstLine, secondLine, children }) => {
                 <StyledHeroBlender>
                   <Skew>
                     <StyledHeader>{firstLine}</StyledHeader>
-                    {/* <Shapes /> */}
-                    {/* <br />
-                    <StyledHeader fontSize={"5rem"}>{secondLine}</StyledHeader> */}
-                    {children}
+
+                    {/* <StyledHeader fontSize={"5rem"}>{secondLine}</StyledHeader> */}
                   </Skew>
                 </StyledHeroBlender>
+                {children && <StyledChildren>{children}</StyledChildren>}
               </StyledHeroHeader>
             </StyledHeroContainer>
           </StyledHeroBody>
         </StyledHeroContent>
       </SlideUp>
-      <ShapesBackground />
     </StyledHeroSection>
   )
 }

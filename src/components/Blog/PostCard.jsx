@@ -14,8 +14,7 @@ const StyledCard = styled.div`
   overflow: hidden;
   box-shadow: 0px 7px 17px -6px rgba(0, 0, 0, 0.31);
   text-align: left;
- 
- 
+
   img {
     width: 100%;
   }
@@ -25,10 +24,9 @@ const StyledCard = styled.div`
     transform: scale(1.01);
   }
 
-  
   .Content {
     padding: 20px 20px 5px;
-    
+
     .PrimaryTag {
       text-transform: uppercase;
       color: ${(props) =>
@@ -42,7 +40,6 @@ const StyledCard = styled.div`
     .Title {
       font-size: ${(props) => (props.smallFont ? "0.8em" : "1.2em")};
       margin-bottom: 10px;
-    
     }
 
     .Excerpt {
@@ -62,7 +59,7 @@ const StyledCard = styled.div`
   }
 
   &:hover {
-    background-color: ${(props) => props.theme.accentColor3};
+    background-color: ${(props) => props.theme.mainColor};
     .Content {
       a {
         color: ${(props) => props.theme.lightColor};

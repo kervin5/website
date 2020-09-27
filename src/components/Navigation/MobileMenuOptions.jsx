@@ -21,7 +21,7 @@ const StyledMobileMenuOptions = styled.div`
     top: 0;
     bottom: 0;
     right: 0;
-    background-color: ${(props) => props.theme.accentColor3};
+    background-color: ${(props) => props.theme.mainColor};
   }
 
   @media (max-width: 845px) {

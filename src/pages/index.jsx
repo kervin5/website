@@ -7,80 +7,20 @@ import Button from "../components/UI/Button"
 import PageSection from "../components/Layout/PageSection"
 import Padding from "../components/Layout/Padding"
 import Header from "../components/UI/Header"
-import Highlight from "../components/UI/Highlight"
-// import Logo from "../images/svgComponents/logo"
-import PersonIllustration from "../images/SvgComponents/person"
 
-import SocialLinks from "../components/Navigation/SocialLinks"
 import TopThreePosts from "../components/Blog/TopThreePosts"
 import ContactInfo from "../components/UI/ContactInfo"
-import HeroSection from "../components/Layout/HeroSection"
+
 // import Skew from "../components/Animation/Skew"
+import LandingPage from "../components/Pages/LandingPage"
+import AboutMePage from "../components/Pages/AboutMePage"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" image="seo.PNG" />
-    <PageSection id="home">
-      {/* <Grid>
-        <Row middle="xs" center="xs">
-          <Col xs={12} md={6}>
-            <Logo />
-          </Col>
-          <Col xs={12} md={6}> */}
-      <HeroSection firstLine="Kervin" secondLine="Web Developer">
-        <span />
-      </HeroSection>
-      {/* <h2>Fullstack Developer</h2> */}
-      {/* <SocialLinks /> */}
-      {/* <Header nomargin>
-              Kervin <Highlight>Vasquez</Highlight>
-            </Header>
-
-            <Header as="h2" weight="300">
-              Full-Stack Developer
-              
-            </Header> */}
-      {/* </Col>
-        </Row>
-      </Grid> */}
-    </PageSection>
-    <PageSection id="aboutMe" skew>
-      <Grid>
-        <Row middle="xs">
-          <Col xs={12} md={6}>
-            <Padding>
-              <Header>
-                About <Highlight>Me</Highlight>
-              </Header>
-              <p>
-                I'm a web developer based in Los Angeles, passionate for
-                creating robust yet user friendly solutions. Writing{" "}
-                <strong>reusable, scalable, testable, and efficient</strong>{" "}
-                software with <strong>Javascript and PHP</strong> is what I do
-                best{" "}
-                <span role="img" aria-label="smiling emoji">
-                  😁
-                </span>
-                .
-              </p>
-              <p>
-                I love movies, technology, good music, memes and basically
-                everything that makes the internet tick. I'm currently working
-                as a full-time web developer{" "}
-                <span role="img" aria-label="laptop emoji">
-                  💻
-                </span>{" "}
-                but I also have fun managing ongoing freelance projects.{" "}
-              </p>
-            </Padding>
-          </Col>
-          <Col xs={12} md={6}>
-            <PersonIllustration />
-          </Col>
-        </Row>
-      </Grid>
-    </PageSection>
-    <PageSection id="services" skew>
+    <LandingPage />
+    <AboutMePage />
+    <PageSection id="services" color="mutedBgColor" skew>
       <Grid>
         <Row middle="xs">
           <Col xs={12} md={6}>

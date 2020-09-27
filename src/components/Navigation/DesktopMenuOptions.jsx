@@ -15,7 +15,7 @@ const StyledDesktopMenuOptions = styled.div`
     border-radius: 25px;
     &:hover {
       background-color: ${(props) => props.theme.mainColor};
-      color: ${(props) => props.theme.darkColor};
+      color: ${(props) => props.theme.lightColor};
       padding: 10px;
     }
   }

@@ -31,10 +31,10 @@ const StyledLayout = styled.div`
   background-color: ${(props) => props.theme.lightColor};
   color: ${(props) => props.theme.darkColor};
 
-  a{
-    /* color: ${(props) => props.theme.accentColor3}; */
+  a {
+    /* color: ${(props) => props.theme.mainColor}; */
     &:visited {
-    color: ${(props) => props.theme.mainColor};
+      color: ${(props) => props.theme.mainColor};
     }
   }
 `
