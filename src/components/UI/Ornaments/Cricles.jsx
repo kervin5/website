@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import { TweenMax } from "gsap"
+import { generateStripes } from "./Stripes"
 
 const StyledCircle = styled.div`
   width: ${(props) => props.size}px;
@@ -29,6 +30,7 @@ const StyledCircleGroup = styled.div`
       ? props.theme.darkColor
       : props.theme.mainColor};
   transition: 300ms;
+  opacity: 1;
 
   /* background: linear-gradient(
     45deg,
@@ -73,7 +75,12 @@ const Cricles = ({ position, size, quantity }) => {
       stagger: -0.02,
     })
   }, [position])
-  return <StyledCircleGroup className="Circles">{circles}</StyledCircleGroup>
+  return (
+    <StyledCircleGroup className="Circles">
+      {generateStripes(4, size)}
+      {circles}
+    </StyledCircleGroup>
+  )
 }
 
 export default Cricles

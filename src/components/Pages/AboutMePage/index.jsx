@@ -9,7 +9,7 @@ import PersonIllustration from "../../../images/SVGComponents/Person"
 
 const AboutMePage = () => {
   return (
-    <PageSection id="aboutMe" skew>
+    <PageSection id="aboutMe" color="mutedBgColor" skew>
       <Grid>
         <Row middle="xs">
           <Col xs={12} md={6}>

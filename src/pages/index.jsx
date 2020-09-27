@@ -20,7 +20,7 @@ const IndexPage = () => (
     <SEO title="Home" image="seo.PNG" />
     <LandingPage />
     <AboutMePage />
-    <PageSection id="services" color="mutedBgColor" skew>
+    <PageSection id="services" skew>
       <Grid>
         <Row middle="xs">
           <Col xs={12} md={6}>

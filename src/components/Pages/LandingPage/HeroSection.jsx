@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react"
 import styled from "styled-components"
 import Circles from "../../UI/Ornaments/Cricles"
+// import Stripes from "../../UI/Ornaments/Stripes"
 import Skew from "../../Animation/Skew"
 import SlideUp from "../../Animation/SlideUp"
 
@@ -29,6 +30,17 @@ const StyledHeroBody = styled.div`
 const StyledHeroContainer = styled.div`
   padding: 0;
   width: 100%;
+  /* &:hover {
+    .Stripes {
+     
+    }
+  }
+
+  &:not(:hover) {
+    .Circles {
+      background-color: red;
+    }
+  } */
 `
 
 const StyledHeroHeader = styled.div`
@@ -116,6 +128,7 @@ const HeroSection = ({ firstLine, children }) => {
           <StyledHeroBody>
             <StyledHeroContainer>
               <StyledHeroHeader>
+                {/* <Stripes quantity={4} size={420} /> */}
                 <Circles position={position} quantity={3} size={420} />
 
                 <StyledHeroBlender>

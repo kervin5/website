@@ -3,21 +3,23 @@ import styled from "styled-components"
 import Skew from "../Animation/Skew"
 
 const StyledPageSection = styled.div`
-  background-color: ${(props) => {
-    console.log(props.color)
-    console.log(props.color ? props.theme[props.color] : props.theme.clearColor)
-    return props.color ? props.theme[props.color] : props.theme.clearColor
-  }};
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  will-change: transform;
+  &.PageSection {
+    background-color: ${(props) => {
+      console.log(props.theme[props.color] ?? props.theme.lightColor)
 
-  .Content {
+      return props.theme[props.color] ?? props.theme.lightColor
+    }};
+    min-height: 100vh;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    will-change: transform;
+
+    .Content {
+      width: 100%;
+    }
   }
 `
 
@@ -30,7 +32,7 @@ const PageSection = ({ color, children, id, skew }) => {
     >
       {skew ? (
         <Skew>
-          <div className="Content">{children}</div>{" "}
+          <div className="Content">{children}</div>
         </Skew>
       ) : (
         <div className="Content">{children}</div>
