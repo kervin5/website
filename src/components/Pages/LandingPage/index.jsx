@@ -4,7 +4,7 @@ import HeroSection from "./HeroSection"
 import HeroLinks from "./HeroLinks"
 import ShapesBackground from "../../../images/SVGComponents/ShapesBakground"
 import Header from "../../UI/Header"
-// import SocialLinks from "../components/Navigation/SocialLinks"
+import SocialLinks from "../../Navigation/SocialLinks"
 
 const LandingPage = () => {
   return (
@@ -12,6 +12,7 @@ const LandingPage = () => {
       <HeroSection firstLine="Kervin" secondLine="Web Developer">
         <Header as="h2">Web Developer</Header>
         <HeroLinks />
+        <SocialLinks />
       </HeroSection>
       <ShapesBackground />
     </PageSection>
