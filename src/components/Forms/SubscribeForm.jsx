@@ -9,7 +9,7 @@ const StyledSubscribeForm = styled.div`
   padding: 30px;
   margin: 30px auto;
 
-  background-color: ${(props) => props.theme.accentColor1};
+  background-color: ${(props) => props.theme.mainColor};
   border-radius: 10px;
   & > div {
     display: flex;
@@ -30,12 +30,12 @@ const StyledSubscribeForm = styled.div`
   }
 
   h1 {
-    color: ${(props) => props.theme.mainColor} !important;
+    color: ${(props) => props.theme.lightColor} !important;
     text-align: center;
   }
 
   p {
-    color: ${(props) => props.theme.lightColor};
+    color: ${(props) => props.theme.darkColor};
     text-align: left;
   }
 
@@ -52,7 +52,8 @@ const StyledSubscribeForm = styled.div`
 
   button {
     border: none;
-    background-color: ${(props) => props.theme.mainColor};
+    background-color: ${(props) => props.theme.darkColor};
+    color: ${(props) => props.theme.lightColor};
     padding: 10px;
     border-radius: 25px;
     max-width: 200px;

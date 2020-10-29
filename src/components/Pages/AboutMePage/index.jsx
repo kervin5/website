@@ -3,7 +3,7 @@ import { Grid, Row, Col } from "react-flexbox-grid"
 import PageSection from "../../Layout/PageSection"
 import Padding from "../../Layout/Padding"
 import Header from "../../UI/Header"
-import Highlight from "../../UI/Highlight"
+// import Highlight from "../../UI/Highlight"
 // import Logo from "../images/svgComponents/logo"
 import PersonIllustration from "../../../images/SVGComponents/Person"
 
@@ -14,9 +14,7 @@ const AboutMePage = () => {
         <Row middle="xs">
           <Col xs={12} md={6}>
             <Padding>
-              <Header>
-                About <Highlight>Me</Highlight>
-              </Header>
+              <Header decoration>About Me</Header>
               <p>
                 I'm a web developer based in Los Angeles, passionate for
                 creating robust yet user friendly solutions. Writing{" "}

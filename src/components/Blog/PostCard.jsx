@@ -31,7 +31,7 @@ const StyledCard = styled.div`
       text-transform: uppercase;
       color: ${(props) =>
         props.theme.name === "light"
-          ? props.theme.accentColor1
+          ? props.theme.mainColor
           : props.theme.mainColor};
       font-size: 0.8em;
       margin-bottom: 0;

@@ -12,7 +12,7 @@ const contactInfo = () => {
       <Row middle="xs">
         <Col xs={12} md={6}>
           <Padding>
-            <Header>
+            <Header decoration>
               Let's <Highlight>talk</Highlight>
             </Header>
             <p>

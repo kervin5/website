@@ -25,7 +25,7 @@ const IndexPage = () => (
         <Row middle="xs">
           <Col xs={12} md={6}>
             <Padding>
-              <Header>Services</Header>
+              <Header decoration>Services</Header>
               <p>
                 Whether you're a business owner looking to get started on a
                 project with a freelance web developer, a developer looking to
@@ -51,7 +51,7 @@ const IndexPage = () => (
         <Row middle="xs">
           <Col xs={12} md={6}>
             <Padding>
-              <Header>Projects</Header>
+              <Header decoration>Projects</Header>
               <p>
                 These are some of the projects that I've been working on. Most
                 of them are things that I've built just for fun or to learn
@@ -84,7 +84,9 @@ const IndexPage = () => (
         <Row middle="xs" center="xs">
           <Col xs={12}>
             <Padding>
-              <Header center>Blog</Header>
+              <Header decoration center>
+                Blog
+              </Header>
               <p>
                 Did you know that I have a blog in Spanish{" "}
                 <span role="img" aria-label="surprised emoji">
