@@ -90,7 +90,7 @@ const StyledHeader = styled.h1`
   }
 
   @media (max-width: 920px) {
-    font-size: 10rem;
+    font-size: 6rem;
   }
 `
 
