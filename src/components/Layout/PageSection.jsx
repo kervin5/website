@@ -5,8 +5,6 @@ import Skew from "../Animation/Skew"
 const StyledPageSection = styled.div`
   &.PageSection {
     background-color: ${(props) => {
-      console.log(props.theme[props.color] ?? props.theme.lightColor)
-
       return props.theme[props.color] ?? props.theme.lightColor
     }};
     min-height: 100vh;
