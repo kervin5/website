@@ -79,6 +79,7 @@ module.exports = {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         queries: require("./src/lib/algolia-queries"),
+        continueOnFailure: true,
       },
     },
   ],
