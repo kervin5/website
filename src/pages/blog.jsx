@@ -9,11 +9,12 @@ import Padding from "../components/Layout/Padding"
 import Header from "../components/UI/Header"
 import Highlight from "../components/UI/Highlight"
 import AllPosts from "../components/Blog/AllPosts"
-import SearchBar from "../components/Blog/SearchBar"
 import AllTags from "../components/Blog/Tags/AllTags"
 import ContactInfo from "../components/UI/ContactInfo"
 import SubscribeForm from "../components/Forms/SubscribeForm"
-// import SearchBarD from "../components/Blog/searchBarD"
+import Search from "../components/Search"
+
+const searchIndices = [{ name: `gatsby-blog`, title: `Posts` }]
 
 const BlogPage = ({ data }) => {
   return (
@@ -27,9 +28,9 @@ const BlogPage = ({ data }) => {
           <Row middle="xs" center="xs">
             <Col xs={12}>
               <Header nomargin>Blog</Header>
-              <SearchBar />
+              {/* <SearchBar indices={searchIndices}/> */}
+              <Search indices={searchIndices} />
               <AllTags />
-              {/* <SearchBarD /> */}
             </Col>
           </Row>
         </Grid>

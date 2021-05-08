@@ -5,7 +5,9 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@styled-icons/fa-solid": "^10.32.0",
     "@tryghost/content-api": "^1.4.4",
+    "algoliasearch": "^3.35.1",
     "babel-plugin-prismjs": "^2.0.1",
     "babel-plugin-styled-components": "^1.11.1",
     "disqus-react": "^1.0.10",
@@ -34,6 +36,7 @@
     "react-ga": "^3.1.2",
     "react-gsap": "^2.2.1",
     "react-helmet": "^6.1.0",
+    "react-instantsearch-dom": "^6.11.0",
     "react-mailchimp-subscribe": "^2.1.0",
     "react-share": "^4.3.0",
     "react-social-icons": "^4.1.0",

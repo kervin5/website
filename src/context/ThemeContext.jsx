@@ -11,6 +11,11 @@ const lightTheme = {
   containerWidth: "1130px",
   mutedColor: "#E9D8D8",
   mutedBgColor: "#F8F8F8",
+
+  //algolia
+  foreground: "#050505",
+  background: "white",
+  faded: "#888",
 }
 
 const darkTheme = {
@@ -23,6 +28,10 @@ const darkTheme = {
   lightColor: "#25283D",
   mutedColor: "#2a2e4d",
   containerWidth: "1130px",
+  //algolia
+  foreground: "#050505",
+  background: "white",
+  faded: "#888",
 }
 
 function determineTheme() {

@@ -11,7 +11,7 @@ const pageQuery = `query latestPostsQuery {
         slug
         reading_time
         published_at(formatString: "MMM DD YYYY")
-        plaintext
+        excerpt
         primary_author {
           name
           profile_image
@@ -37,6 +37,7 @@ function pageToAlgoliaRecord({
   primary_tag,
   tags,
   slug,
+  excerpt,
 }) {
   return {
     objectID: id,
@@ -46,6 +47,7 @@ function pageToAlgoliaRecord({
     author: primary_author.name,
     primary_tag: primary_tag.name,
     tags: tags.map((t) => t.name),
+    excerpt,
   }
 }
 const queries = [
@@ -53,7 +55,7 @@ const queries = [
     query: pageQuery,
     transformer: ({ data }) => data.allGhostPost.nodes.map(pageToAlgoliaRecord),
     indexName,
-    settings: { attributesToSnippet: [`excerpt:20`] },
+    settings: { attributesToSnippet: [`plaintext:20`] },
   },
 ]
 module.exports = queries
