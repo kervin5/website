@@ -3,7 +3,7 @@ import styled from "styled-components"
 import GhostContentAPI from "@tryghost/content-api"
 import { Link } from "gatsby"
 const api = new GhostContentAPI({
-  url: "https://kervin-tech-cms.herokuapp.com",
+  url: process.env.GATSBY_CMS_API_URL,
   key: process.env.GATSBY_CMS_CONTENT_API_KEY,
   version: "v3",
 })
