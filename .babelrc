@@ -6,6 +6,6 @@
         "plugins": ["show-language"],
         "theme": "okaidia",
         "css": true
-      }]
+      },"@babel/plugin-proposal-numeric-separator"]
     ]
   }
