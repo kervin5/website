@@ -101,7 +101,7 @@ const IndexPage = () => (
           </Col>
           <Col xs={12}>
             <TopThreePosts />
-            <Button href="https://kervin.blog" as="a">
+            <Button href="/blog" as="a">
               Ver Más
             </Button>
             <br />

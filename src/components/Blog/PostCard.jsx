@@ -72,26 +72,26 @@ const PostCard = ({ post, noImage, tags, noExcerpt, smallFont }) => {
   return (
     <StyledCard smallFont={smallFont}>
       {!noImage && (
-        <a href={`https://kervin.blog/${post.slug}`}>
+        <Link to={`/blog/${post.slug}`}>
           <img src={post.feature_image} alt={post.title} />
-        </a>
+        </Link>
       )}
       <div className="Content">
         <p className="PrimaryTag">
           {post.primary_tag ? post.primary_tag.name : ""}
         </p>
-        <a href={`https://kervin.blog/${post.slug}`}>
+        <Link to={`/blog/${post.slug}`}>
           <h3 className="Title">{post.title}</h3>
-        </a>
+        </Link>
         {tags && <Tags tags={post.tags} />}
         {!noExcerpt && (
-          <a href={`https://kervin.blog/${post.slug}`}>
+          <Link to={`/blog/${post.slug}`}>
             <p className="Excerpt">
               {noImage
                 ? post.plaintext.substring(0, 320) + "..."
                 : post.excerpt}
             </p>
-          </a>
+          </Link>
         )}
       </div>
       <div className="Footer">

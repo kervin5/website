@@ -61,7 +61,7 @@ const MobileMenuOptions = ({ items, open, onClick }) => {
           {items.map((option, index) => {
             return (
               <Col xs={12} key={option.url + index}>
-                {option?.external ? <a href={`${option.url}`}>{option.label}</a> :  <Link to={`${option.url}`}>{option.label}</Link>}
+                <Link to={`${option.url}`}>{option.label}</Link>
               </Col>
             )
           })}

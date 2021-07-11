@@ -81,10 +81,10 @@ const widePostCard = ({ post }) => {
                 <p className="PrimaryTag">
                   {post.primary_tag ? post.primary_tag.name : ""}
                 </p>
-                <a href={`https://kervin.blog/${post.slug}`}>
+                <Link to={`/blog/${post.slug}`}>
                   <h3 className="Title">{post.title}</h3>
                   <p className="Excerpt">{post.excerpt}</p>
-                </a>
+                </Link>
               </div>
               <div className="Footer">
                 <PostMeta post={post} />
