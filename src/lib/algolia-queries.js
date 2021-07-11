@@ -1,6 +1,6 @@
 const escapeStringRegexp = require("escape-string-regexp")
 const pagePath = `blog`
-const indexName = `gatsby-blog`
+const indexName = `kervin-blog`
 const pageQuery = `query latestPostsQuery {
     allGhostPost {
       nodes {

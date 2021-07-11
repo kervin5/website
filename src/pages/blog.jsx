@@ -14,7 +14,7 @@ import ContactInfo from "../components/UI/ContactInfo"
 import SubscribeForm from "../components/Forms/SubscribeForm"
 import Search from "../components/Search"
 
-const searchIndices = [{ name: `gatsby-blog`, title: `Posts` }]
+const searchIndices = [{ name: `kervin-blog`, title: `Posts` }]
 
 const BlogPage = ({ data }) => {
   return (
