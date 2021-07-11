@@ -43,7 +43,7 @@ const Button = ({ as, children, href, outline = false }) => {
   return (
     <StyledButton className={outline ? "Outline" : ""}>
       {as === "a" ? (
-        <Link to={`${href}`}>{children}</Link>
+        <a to={`${href}`}>{children}</a>
       ) : (
         <button>{children}</button>
       )}
