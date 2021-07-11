@@ -118,7 +118,11 @@ const Post = ({ data }) => {
   }
   useEffect(() => {
     // call the highlightAll() function to style our code blocks
-    Prism.highlightAll()
+    // Prism.highlightAll()
+    if(typeof window !== "undefined")
+    {
+      window.location.replace(`https://kervin.blog/${post.slug}`)
+    }
   }, [])
   return (
     <Layout>
