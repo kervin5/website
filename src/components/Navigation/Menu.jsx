@@ -30,7 +30,7 @@ const menuItems = [
   { label: "Services", url: "/#services" },
   { label: "Contact", url: "/#contact" },
   { label: "Projects", url: "/#projects" },
-  { label: "Blog", url: "/blog" },
+  { label: "Blog", url: "https://kervin.blog", external: true },
 ]
 
 const Menu = () => {
