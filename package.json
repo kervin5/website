@@ -26,7 +26,7 @@
     "gatsby-source-ghost": "^4.2.4",
     "gsap": "^3.5.1",
     "jimp": "^0.13.0",
-    "prismjs": "^1.21.0",
+    "prismjs": "^1.25.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
