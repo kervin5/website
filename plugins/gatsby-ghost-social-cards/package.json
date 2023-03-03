@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "jimp": "^0.8.5",
+    "jimp": "^0.22.7",
     "node-fetch": "^2.6.0",
     "query-string": "^6.9.0"
   }
